@@ -1,0 +1,14 @@
+$tileShadow: 0 0 10px 5px #f3f3f3;
+
+.ap-post-tile {
+    height: 100%;
+    padding: 15px;
+    box-shadow: $tileShadow;
+    border-radius: 2.5px;
+    &-title {
+        font-weight: bold;
+    }
+    &-description {
+        padding-top: 15px;
+    }
+}
