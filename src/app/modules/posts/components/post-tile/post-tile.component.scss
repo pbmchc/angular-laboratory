@@ -1,10 +1,9 @@
-$tileShadow: 0 0 10px 5px #f3f3f3;
+@import '../../../../shared/styles/base';
 
 .ap-post-tile {
+    @extend %ap-card;
     height: 100%;
     padding: 15px;
-    box-shadow: $tileShadow;
-    border-radius: 2.5px;
     &-title {
         font-weight: bold;
     }
