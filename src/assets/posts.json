@@ -1,17 +1,21 @@
 [
     {
+        "id": "post-1",
         "title": "First post",
         "description": "First post description"
     },
     {
+        "id": "post-2",
         "title": "Second post",
         "description": "Second post description"
     },
     {
+        "id": "post-3",
         "title": "Third post",
         "description": "Third post description"
     },
     {
+        "id": "post-4",
         "title": "Fourth post",
         "description": "Third post description"
     }

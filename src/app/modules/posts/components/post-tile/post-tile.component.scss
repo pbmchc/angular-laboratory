@@ -4,10 +4,18 @@
     @extend %ap-card;
     height: 100%;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
     &-title {
         font-weight: bold;
     }
     &-description {
         padding-top: 15px;
+        margin: 0 0 15px;
+    }
+    &-button {
+        width: 100px;
+        margin: auto 0 0;
+        align-self: flex-end;
     }
 }
