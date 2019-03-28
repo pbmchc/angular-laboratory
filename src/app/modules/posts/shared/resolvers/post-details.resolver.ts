@@ -12,6 +12,6 @@ export class PostDetailsResolver implements Resolve<Post> {
     constructor(private postsService: PostsService) { }
 
     resolve(route: ActivatedRouteSnapshot): Observable<Post> {
-        return this.postsService.getSinglePost(route.params.id);
+        return this.postsService.getPostDetails(route.params.id);
     }
 }
