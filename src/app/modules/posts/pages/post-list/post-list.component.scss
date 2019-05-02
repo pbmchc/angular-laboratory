@@ -4,9 +4,14 @@
     padding: 30px 15px;
     .ap-post-list-header {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         .ap-post-search {
             margin-left: auto;
+            @media only screen and (max-width: 480px) {
+                min-width: 100%;
+                margin: 15px 0;
+            }
         }
     }
     .ap-post-list-jumbotron {

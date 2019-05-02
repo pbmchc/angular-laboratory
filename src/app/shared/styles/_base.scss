@@ -1,4 +1,20 @@
+$apBorderRadius: 2.5px;
+$apAccentColor: lighten(salmon, 2.5);
+$apLightGray: #f3f3f3;
+
 %ap-card {
-    border-radius: 2.5px;
-    box-shadow: 0 0 10px 5px #f3f3f3;
+    border-radius: $apBorderRadius;
+    box-shadow: 0 0 10px 5px $apLightGray;
+}
+
+%ap-input {
+    width: 100%;
+    border-radius: $apBorderRadius * 2;
+    border: 2px solid $apLightGray;
+    outline: none;
+    padding: 5px;
+    font-size: 1em;
+    &:active, &:focus {
+        border: 2px solid $apAccentColor;
+    }
 }

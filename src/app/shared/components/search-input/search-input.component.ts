@@ -1,10 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 @Component({
     selector: 'ap-search-input',
-    template: `<input class="ap-search-input" [formControl]="searchInput"/>`,
+    templateUrl: './search-input.component.html',
     styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent implements OnInit {
@@ -14,6 +15,7 @@ export class SearchInputComponent implements OnInit {
 
     searchInput: FormControl;
 
+    private onDestroy$ = new Subject<boolean>();
     private DEBOUNCE_TIME = 400;
 
     constructor() { }
@@ -22,12 +24,18 @@ export class SearchInputComponent implements OnInit {
         this.initializeSearchControl();
     }
 
+    ngOnDestroy(): void {
+        this.onDestroy$.next(true);
+        this.onDestroy$.unsubscribe();
+    }
+
     private initializeSearchControl(): void {
         this.searchInput = new FormControl('');
         this.searchInput.valueChanges
             .pipe(
                 debounceTime(this.DEBOUNCE_TIME),
-                distinctUntilChanged()
+                distinctUntilChanged(),
+                takeUntil(this.onDestroy$)
             )
             .subscribe((v: string) => this.onSearchValueChange.emit(v));
     }
