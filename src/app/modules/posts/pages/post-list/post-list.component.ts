@@ -16,4 +16,8 @@ export class PostListComponent implements OnInit {
     ngOnInit() {
         this.posts = this.route.snapshot.data.posts;
     }
+
+    filterPosts(searchTerm: string): void {
+        console.log(searchTerm);
+    }
 }

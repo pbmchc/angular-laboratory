@@ -2,6 +2,13 @@
 
 .ap-post-list-container {
     padding: 30px 15px;
+    .ap-post-list-header {
+        display: flex;
+        align-items: center;
+        .ap-post-search {
+            margin-left: auto;
+        }
+    }
     .ap-post-list-jumbotron {
         @extend %ap-card;
         height: 300px;

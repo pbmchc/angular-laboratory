@@ -1,7 +1,12 @@
 <div class="ap-post-list-container">
-    <h1>
-        Post list
-    </h1>
+    <div class="ap-post-list-header">
+        <h1>
+            Post list
+        </h1>
+        <div class="ap-post-search">
+            <ap-search-input (onSearchValueChange)="filterPosts($event)"></ap-search-input>
+        </div>
+    </div>
     <div class="ap-post-list-jumbotron">
         <h2 class="ap-post-list-jumbotron-title">
             Title
