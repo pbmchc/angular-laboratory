@@ -5,6 +5,8 @@
         </h1>
     </div>
     <div class="ap-authors-list">
-        AUTHORS LIST
+        <div *ngFor="let author of authors; trackBy: authorsTrackingFunction">
+            <ap-author-list-item [author]="author"></ap-author-list-item>
+        </div>
     </div>
 </div>

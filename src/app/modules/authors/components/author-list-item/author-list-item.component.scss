@@ -1,0 +1,19 @@
+@import "../../../../shared/styles/base";
+
+$authorListItemHeight: 100px;
+
+.ap-author-list-item {
+    @extend %ap-list-item;
+    display: flex;
+    min-height: $authorListItemHeight;
+    margin: 10px 0;
+    &-image {
+        border-radius: $apBorderRadius / 2;
+        width: $authorListItemHeight;
+        background-color: $apAccentColor;
+    }
+    &-details {
+        border-left: 10px solid $apLightGray;
+        padding: 15px 30px;
+    }
+}

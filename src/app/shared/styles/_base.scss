@@ -2,6 +2,11 @@ $apBorderRadius: 2.5px;
 $apAccentColor: lighten(salmon, 2.5);
 $apLightGray: #f3f3f3;
 
+%ap-list-item {
+    border-radius: $apBorderRadius / 2;
+    box-shadow: 0 0 10px 1.5px $apLightGray;
+}
+
 %ap-card {
     border-radius: $apBorderRadius;
     box-shadow: 0 0 10px 5px $apLightGray;
