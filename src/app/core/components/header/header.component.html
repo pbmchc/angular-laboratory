@@ -1,0 +1,12 @@
+<div class="ap-header">
+  <div class="ap-header-title">
+    APP
+  </div>
+  <ul>
+    <li *ngFor="let route of routes">
+      <a [routerLink]="route.link">
+        {{ route.label }}
+      </a>
+    </li>
+  </ul>
+</div>

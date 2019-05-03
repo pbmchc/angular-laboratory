@@ -1,0 +1,14 @@
+.ap-header {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    ul {
+        flex-grow: 1;
+        list-style: none;
+        text-align: right;
+        li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+    }
+}
