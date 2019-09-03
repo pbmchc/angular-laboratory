@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TrackByFunction } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../../shared/posts.service';
 import { Post } from 'src/app/shared/models/post/post.model';
+import { trackBy } from 'src/app/shared/utils/list.utils';
 
 @Component({
     selector: 'ap-post-list',
@@ -11,9 +12,10 @@ import { Post } from 'src/app/shared/models/post/post.model';
 export class PostListComponent implements OnInit {
 
     posts: Post[];
+    trackByPostId: TrackByFunction<Post> = trackBy('id');
 
     constructor(private route: ActivatedRoute,
-                private postsService: PostsService) { }
+        private postsService: PostsService) { }
 
     ngOnInit() {
         this.posts = this.route.snapshot.data.posts;
@@ -22,9 +24,5 @@ export class PostListComponent implements OnInit {
     filterPosts(searchTerm: string): void {
         this.postsService.getFilteredPosts(searchTerm)
             .subscribe(posts => this.posts = posts);
-    }
-
-    postsTrackingFunction(_: number, item: Post): string {
-        return item.id;
     }
 }

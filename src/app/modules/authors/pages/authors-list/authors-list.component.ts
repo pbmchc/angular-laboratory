@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TrackByFunction } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Author } from 'src/app/shared/models/author/author.model';
+import { trackBy } from 'src/app/shared/utils/list.utils';
 
 @Component({
     selector: 'ap-authors-list',
@@ -10,14 +11,11 @@ import { Author } from 'src/app/shared/models/author/author.model';
 export class AuthorsListComponent implements OnInit {
 
     authors: Author[];
+    trackByAuthorId: TrackByFunction<Author> = trackBy('id');
 
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
         this.authors = this.route.snapshot.data.authors;
-    }
-
-    authorsTrackingFunction(_: number, item: Author): string {
-        return item.id;
     }
 }
