@@ -15,7 +15,7 @@ export class PostListComponent implements OnInit {
     trackByPostId: TrackByFunction<Post> = trackBy('id');
 
     constructor(private route: ActivatedRoute,
-        private postsService: PostsService) { }
+                private postsService: PostsService) { }
 
     ngOnInit() {
         this.posts = this.route.snapshot.data.posts;

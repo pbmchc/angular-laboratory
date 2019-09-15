@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
@@ -8,10 +8,9 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
     templateUrl: './search-input.component.html',
     styleUrls: ['./search-input.component.scss']
 })
-export class SearchInputComponent implements OnInit {
+export class SearchInputComponent implements OnInit, OnDestroy {
 
-    @Output()
-    onSearchValueChange = new EventEmitter<string>();
+    @Output() searchValueChange = new EventEmitter<string>();
 
     searchInput: FormControl;
 
@@ -37,6 +36,6 @@ export class SearchInputComponent implements OnInit {
                 distinctUntilChanged(),
                 takeUntil(this.onDestroy$)
             )
-            .subscribe((v: string) => this.onSearchValueChange.emit(v));
+            .subscribe((v: string) => this.searchValueChange.emit(v));
     }
 }

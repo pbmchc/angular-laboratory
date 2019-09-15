@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Author } from '../../../../shared/models/author/author.model';
 
 @Component({
@@ -6,12 +6,6 @@ import { Author } from '../../../../shared/models/author/author.model';
     templateUrl: './author-list-item.component.html',
     styleUrls: ['./author-list-item.component.scss']
 })
-export class AuthorListItemComponent implements OnInit {
-    
-    @Input()
-    author: Author;
-
-    constructor() { }
-
-    ngOnInit() { }
+export class AuthorListItemComponent {
+    @Input() author: Author;
 }
