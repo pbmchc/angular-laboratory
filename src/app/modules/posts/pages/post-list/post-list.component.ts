@@ -1,8 +1,8 @@
 import { Component, OnInit, TrackByFunction } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostsService } from '../../shared/posts.service';
-import { Post } from 'src/app/shared/models/post/post.model';
-import { trackBy } from 'src/app/shared/utils/list.utils';
+import { Post } from '../../../../shared/models/post/post.model';
+import { trackBy } from '../../../../shared/utils/list.utils';
 
 @Component({
     selector: 'ap-post-list',
@@ -10,7 +10,6 @@ import { trackBy } from 'src/app/shared/utils/list.utils';
     styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-
     posts: Post[];
     trackByPostId: TrackByFunction<Post> = trackBy('id');
 

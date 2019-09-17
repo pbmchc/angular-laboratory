@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Post } from 'src/app/shared/models/post/post.model';
+import { Post } from '../../../../shared/models/post/post.model';
 
 @Component({
     selector: 'ap-post-details',

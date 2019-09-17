@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Post } from 'src/app/shared/models/post/post.model';
+import { Post } from '../../../../shared/models/post/post.model';
 
 @Component({
     selector: 'ap-post-tile',

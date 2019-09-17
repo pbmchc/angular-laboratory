@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Author } from 'src/app/shared/models/author/author.model';
+import { Author } from '../../../../shared/models/author/author.model';
 import { AuthorsService } from '../../shared/authors.service';
 
 @Component({

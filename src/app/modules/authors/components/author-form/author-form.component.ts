@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AuthorFormBuilder } from './author-form-builder.service';
 import { AUTHOR_FORM_CONTROLS } from './author-form.constants';
-import { Author } from 'src/app/shared/models/author/author.model';
+import { Author } from '../../../../shared/models/author/author.model';
 
 @Component({
     selector: 'ap-author-form',

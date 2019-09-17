@@ -1,7 +1,7 @@
 import { Component, OnInit, TrackByFunction } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Author } from 'src/app/shared/models/author/author.model';
-import { trackBy } from 'src/app/shared/utils/list.utils';
+import { Author } from '../../../../shared/models/author/author.model';
+import { trackBy } from '../../../../shared/utils/list.utils';
 
 @Component({
     selector: 'ap-authors-list',

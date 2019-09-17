@@ -9,7 +9,6 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
     styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent implements OnInit, OnDestroy {
-
     @Output() searchValueChange = new EventEmitter<string>();
 
     searchInput: FormControl;

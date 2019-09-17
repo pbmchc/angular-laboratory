@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
-import { RestService } from 'src/app/core/api/rest.service';
-import { Author } from 'src/app/shared/models/author/author.model';
+import { RestService } from '../../../core/api/rest.service';
+import { Author } from '../../../shared/models/author/author.model';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class AuthorsService {
     private authors: Author[] = [];
     private authorsFetched: boolean;

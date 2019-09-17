@@ -10,7 +10,7 @@ const routes: Routes = [
     {
         path: 'authors',
         loadChildren: './modules/authors/authors.module#AuthorsModule'
-    },
+    }
 ];
 
 @NgModule({
