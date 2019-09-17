@@ -3,14 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: 'authors',
-        loadChildren: './modules/authors/authors.module#AuthorsModule'
-    },
-    {
         path: '',
         pathMatch: 'full',
         redirectTo: 'posts'
-    }
+    },
+    {
+        path: 'authors',
+        loadChildren: './modules/authors/authors.module#AuthorsModule'
+    },
 ];
 
 @NgModule({

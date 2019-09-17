@@ -16,7 +16,10 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
         ReactiveFormsModule,
         FontAwesomeModule
     ],
-    exports: [SearchInputComponent]
+    exports: [
+        SearchInputComponent,
+        ReactiveFormsModule
+    ]
 })
 export class SharedModule {
     constructor() {

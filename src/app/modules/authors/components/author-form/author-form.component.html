@@ -1,0 +1,13 @@
+<div>
+    <form [formGroup]="authorForm"
+          (ngSubmit)="onSubmit()">
+        <input id="{{ AUTHOR_FORM_CONTROLS.FIRSTNAME }}-input"
+               [formControlName]="AUTHOR_FORM_CONTROLS.FIRSTNAME">
+        <input id="{{ AUTHOR_FORM_CONTROLS.LASTNAME }}-input"
+               [formControlName]="AUTHOR_FORM_CONTROLS.LASTNAME">
+        <button type="submit"
+                [disabled]="authorForm.invalid">
+            SAVE
+        </button>
+    </form>
+</div>

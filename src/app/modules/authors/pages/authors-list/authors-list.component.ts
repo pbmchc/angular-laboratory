@@ -9,7 +9,6 @@ import { trackBy } from 'src/app/shared/utils/list.utils';
     styleUrls: ['./authors-list.component.scss']
 })
 export class AuthorsListComponent implements OnInit {
-
     authors: Author[];
     trackByAuthorId: TrackByFunction<Author> = trackBy('id');
 
