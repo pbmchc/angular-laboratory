@@ -5,11 +5,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SearchInputComponent } from './components/search-input/search-input.component';
 
+import { HasAdminRoleDirective } from './directives/has-admin-role.directive';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
-    declarations: [SearchInputComponent],
+    declarations: [
+        HasAdminRoleDirective,
+        SearchInputComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -17,6 +22,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
         FontAwesomeModule
     ],
     exports: [
+        HasAdminRoleDirective,
         SearchInputComponent,
         ReactiveFormsModule
     ]

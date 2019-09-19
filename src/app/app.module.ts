@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PostsModule } from './modules/posts/posts.module';
 
+import { UserRole } from './shared/enums/user-role.enum';
+import { USER } from './shared/tokens/user.token';
+
 @NgModule({
     declarations: [
         AppComponent
@@ -16,7 +19,12 @@ import { PostsModule } from './modules/posts/posts.module';
         CoreModule,
         PostsModule
     ],
-    providers: [],
+    providers: [
+        {
+            provide: USER,
+            useValue: { id: 'ID_1', roles: [UserRole.Admin] }
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
