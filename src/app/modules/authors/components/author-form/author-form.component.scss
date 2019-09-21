@@ -1,0 +1,18 @@
+$defaultFormGroupPadding: 15px;
+
+.author-form {
+    &-group {
+        position: relative;
+        padding: $defaultFormGroupPadding 0 $defaultFormGroupPadding * 2;
+    }
+
+    &-error {
+        position: absolute;
+        bottom: $defaultFormGroupPadding - 5px;
+        left: 0;
+    }
+
+    button[type=submit] {
+        display: block;
+    }
+}

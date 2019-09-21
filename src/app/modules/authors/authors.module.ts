@@ -9,6 +9,7 @@ import { AuthorListItemComponent } from './components/author-list-item/author-li
 import { AuthorModifyComponent } from './pages/author-modify/author-modify.component';
 import { AuthorsListResolver } from './shared/resolvers/authors-list.resolver';
 import { AuthorsService } from './shared/authors.service';
+import { UniqueAuthorValidator } from './shared/validators/unique-author.validator';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { AuthorsService } from './shared/authors.service';
     ],
     providers: [
         AuthorsListResolver,
-        AuthorsService
+        AuthorsService,
+        UniqueAuthorValidator
     ]
 })
 export class AuthorsModule { }

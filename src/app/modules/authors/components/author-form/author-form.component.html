@@ -1,13 +1,19 @@
-<div>
+<div class="author-form">
     <form [formGroup]="authorForm"
           (ngSubmit)="onSubmit()">
-        <input id="{{ AUTHOR_FORM_CONTROLS.FIRSTNAME }}-input"
-               [formControlName]="AUTHOR_FORM_CONTROLS.FIRSTNAME">
-        <input id="{{ AUTHOR_FORM_CONTROLS.LASTNAME }}-input"
-               [formControlName]="AUTHOR_FORM_CONTROLS.LASTNAME">
+        <div class="author-form-group">
+            <input id="{{ AUTHOR_FORM_CONTROLS.FIRSTNAME }}-input"
+                   [formControlName]="AUTHOR_FORM_CONTROLS.FIRSTNAME">
+            <input id="{{ AUTHOR_FORM_CONTROLS.LASTNAME }}-input"
+                   [formControlName]="AUTHOR_FORM_CONTROLS.LASTNAME">
+            <span class="author-form-error"
+                  *ngIf="authorForm.errors?.existingAuthor">
+                Author already exists
+            </span>
+        </div>
         <button type="submit"
-                [disabled]="authorForm.invalid">
-            SAVE
+                [disabled]="!authorForm.valid">
+            {{ authorForm.pending ? 'CHECKING...' : 'SAVE' }}
         </button>
     </form>
 </div>
