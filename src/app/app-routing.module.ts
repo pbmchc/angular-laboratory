@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PRELOAD_ROUTE } from './core/constants/app.constants';
 import { RoutesPreloader } from './core/preloaders/routes-preloader';
 
 const routes: Routes = [
@@ -12,9 +11,9 @@ const routes: Routes = [
     },
     {
         path: 'authors',
-        loadChildren: './modules/authors/authors.module#AuthorsModule',
+        loadChildren: () => import('./modules/authors/authors.module').then(m => m.AuthorsModule),
         data: {
-            [PRELOAD_ROUTE]: true
+            preload: true
         }
     }
 ];
