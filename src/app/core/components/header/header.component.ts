@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
     routes: RouteConfig[];
 
-    private readonly AVAILABLE_ROUTES = ['posts', 'authors'];
+    private readonly AVAILABLE_ROUTES = ['posts', 'authors', 'topics'];
 
     constructor() { }
 

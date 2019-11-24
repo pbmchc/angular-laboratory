@@ -1,0 +1,9 @@
+<div class="ap-tab-menu">
+    <ul class="ap-tabs">
+        <li *ngFor="let tab of tabs; trackBy: trackByValue"
+             class="ap-tab"
+             (click)="setActiveTab(tab)">
+            {{tab.label}}
+        </li>
+    </ul>
+</div>

@@ -4,11 +4,13 @@
             Authors
         </h1>
     </div>
-    <div *apHasAdminRole>
-        <button routerLink="new">
-            Add author
-        </button>
-    </div>
+    <ap-header-portal>
+        <div *apHasAdminRole>
+            <button routerLink="new">
+                Add author
+            </button>
+        </div>
+    </ap-header-portal>
     <div class="ap-authors-list">
         <div *ngFor="let author of authors; trackBy: trackByAuthorId">
             <ap-author-list-item [author]="author"></ap-author-list-item>

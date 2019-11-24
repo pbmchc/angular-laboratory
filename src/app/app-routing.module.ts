@@ -15,6 +15,10 @@ const routes: Routes = [
         data: {
             preload: true
         }
+    },
+    {
+        path: 'topics',
+        loadChildren: () => import('./modules/topics/topics.module').then(m => m.TopicsModule)
     }
 ];
 

@@ -1,0 +1,15 @@
+.ap-tab-menu {
+    .ap-tabs {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+
+        .ap-tab {
+            cursor: pointer;
+            padding: 5px 10px;
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
+    }
+}
