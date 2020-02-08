@@ -6,12 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test:commit": "ng test --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm run test:commit"
     }
   },
   "private": true,
