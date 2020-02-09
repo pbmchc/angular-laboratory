@@ -6,7 +6,7 @@ import {CdkPortal, DomPortalOutlet} from '@angular/cdk/portal';
     templateUrl: './header-portal.component.html'
 })
 export class HeaderPortalComponent implements AfterViewInit, OnDestroy {
-    @ViewChild(CdkPortal, {static: false}) private headerPortal: CdkPortal;
+    @ViewChild(CdkPortal) private headerPortal: CdkPortal;
     private host: DomPortalOutlet;
     private readonly OUTLET_ELEMENT_ID: string = 'ap-header-outlet';
 
