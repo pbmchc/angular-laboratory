@@ -14,7 +14,7 @@ describe('AuthorsService', () => {
   }));
 
   it('should be created', () => {
-    const service: AuthorsService = TestBed.get(AuthorsService);
+    const service: AuthorsService = TestBed.inject(AuthorsService);
     expect(service).toBeTruthy();
   });
 });
