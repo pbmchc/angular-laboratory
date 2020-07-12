@@ -5,8 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ci": "ng build --prod --base-href /angular-laboratory/",
     "test": "ng test",
-    "test:commit": "ng test --watch=false --code-coverage",
+    "test:ci": "ng test --watch=false --code-coverage",
     "lint": "ng lint",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
@@ -14,7 +15,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run test:commit"
+      "pre-commit": "npm run lint && npm run test:ci"
     }
   },
   "private": true,
