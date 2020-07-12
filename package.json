@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "test:commit": "ng test --watch=false",
+    "test:commit": "ng test --watch=false --code-coverage",
     "lint": "ng lint",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
