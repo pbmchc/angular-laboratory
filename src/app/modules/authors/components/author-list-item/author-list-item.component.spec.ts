@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AuthorListItemComponent } from './author-list-item.component';
 import { Author } from '../../../../shared/models/author/author.model';
@@ -7,7 +7,7 @@ describe('AuthorListItemComponent', () => {
   let component: AuthorListItemComponent;
   let fixture: ComponentFixture<AuthorListItemComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AuthorListItemComponent
