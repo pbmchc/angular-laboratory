@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "../../../../shared/styles/base";
 
 $authorListItemHeight: 100px;
@@ -8,7 +9,7 @@ $authorListItemHeight: 100px;
     min-height: $authorListItemHeight;
     margin: 10px 0;
     &-image {
-        border-radius: $apBorderRadius / 2;
+        border-radius: math.div($apBorderRadius, 2);
         width: $authorListItemHeight;
         background-color: $apAccentColor;
     }
