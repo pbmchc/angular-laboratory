@@ -1,29 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+
 import { RouteConfig } from '../../../shared/models/route-config.model';
 
 @Component({
-    selector: 'ap-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss']
+  selector: 'ap-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  routes: RouteConfig[];
 
-    routes: RouteConfig[];
+  private readonly AVAILABLE_ROUTES = ['posts', 'authors', 'topics'];
 
-    private readonly AVAILABLE_ROUTES = ['posts', 'authors', 'topics'];
+  ngOnInit() {
+    this.routes = this.loadAvailableRoutes();
+  }
 
-    constructor() { }
-
-    ngOnInit() {
-        this.routes = this.loadAvailableRoutes();
-    }
-
-    private loadAvailableRoutes(): RouteConfig[] {
-        return this.AVAILABLE_ROUTES.map((route: string) =>
-            ({
-                link: `/${route}`,
-                label: route.toUpperCase()
-            })
-        );
-    }
+  private loadAvailableRoutes(): RouteConfig[] {
+    return this.AVAILABLE_ROUTES.map((route: string) => ({
+      link: `/${route}`,
+      label: route.toUpperCase()
+    }));
+  }
 }

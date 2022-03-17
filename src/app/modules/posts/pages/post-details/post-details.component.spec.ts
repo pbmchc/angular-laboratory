@@ -1,24 +1,28 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { PostDetailsComponent } from './post-details.component';
 import { Post } from 'src/app/shared/models/post/post.model';
+
+import { PostDetailsComponent } from './post-details.component';
 
 describe('PostDetailsComponent', () => {
   let component: PostDetailsComponent;
   let fixture: ComponentFixture<PostDetailsComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        PostDetailsComponent
-      ]
+  const mockPost = (id: string = 'id', title: string = '', description: string = ''): Post => ({
+    id,
+    title,
+    description
+  });
+
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [RouterTestingModule],
+        declarations: [PostDetailsComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PostDetailsComponent);
@@ -30,8 +34,4 @@ describe('PostDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  function mockPost(id: string = 'id', title: string = '', description: string = ''): Post {
-    return { id, title, description };
-  }
 });

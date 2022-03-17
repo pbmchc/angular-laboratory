@@ -1,20 +1,22 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { AuthorListItemComponent } from './author-list-item.component';
 import { Author } from '../../../../shared/models/author/author.model';
+
+import { AuthorListItemComponent } from './author-list-item.component';
 
 describe('AuthorListItemComponent', () => {
   let component: AuthorListItemComponent;
   let fixture: ComponentFixture<AuthorListItemComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AuthorListItemComponent
-      ]
+  const mockAuthor = (id: string = 'id', name: string = 'John Doe'): Author => ({ id, name });
+
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [AuthorListItemComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthorListItemComponent);
@@ -26,8 +28,4 @@ describe('AuthorListItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  function mockAuthor(id: string = 'id', name: string = 'John Doe'): Author {
-    return { id,  name };
-  }
 });

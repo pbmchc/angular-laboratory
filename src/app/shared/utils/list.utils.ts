@@ -1,5 +1,3 @@
 import { TrackByFunction } from '@angular/core';
 
-export function trackBy<T>(key?: keyof T): TrackByFunction<T> {
-    return (index: number, item: T) => key ? item[key] : index;
-}
+export const trackBy = <T>(key?: keyof T): TrackByFunction<T> => (index: number, item: T) => key ? item[key] : index;
