@@ -1,9 +1,11 @@
 import { CdkPortal, DomPortalOutlet } from '@angular/cdk/portal';
+import { DOCUMENT } from '@angular/common';
 import {
   AfterViewInit,
   ApplicationRef,
   Component,
   ComponentFactoryResolver,
+  Inject,
   Injector,
   OnDestroy,
   ViewChild
@@ -19,6 +21,7 @@ export class HeaderPortalComponent implements AfterViewInit, OnDestroy {
   private readonly OUTLET_ELEMENT_ID: string = 'ap-header-outlet';
 
   constructor(
+    @Inject(DOCUMENT) private document: Document,
     private componentFactoryResolver: ComponentFactoryResolver,
     private applicationRef: ApplicationRef,
     private injector: Injector
@@ -26,7 +29,7 @@ export class HeaderPortalComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.host = new DomPortalOutlet(
-      document.getElementById(this.OUTLET_ELEMENT_ID),
+      this.document.getElementById(this.OUTLET_ELEMENT_ID),
       this.componentFactoryResolver,
       this.applicationRef,
       this.injector
