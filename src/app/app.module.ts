@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PostsModule } from './modules/posts/posts.module';
 import { UserRole } from './shared/enums/user-role.enum';
+import { SharedModule } from './shared/shared.module';
 import { USER } from './shared/tokens/user.token';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { USER } from './shared/tokens/user.token';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    PostsModule
+    PostsModule,
+    SharedModule
   ],
   providers: [
     {

@@ -1,4 +1,5 @@
 export interface RouteConfig {
-    link: string;
-    label: string;
+  key: string;
+  link: string;
+  label: string;
 }

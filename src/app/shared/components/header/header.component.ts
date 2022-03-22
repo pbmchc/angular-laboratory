@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TrackByFunction } from '@angular/core';
 
-import { RouteConfig } from '../../../shared/models/route-config.model';
+import { RouteConfig } from '../../models/route-config.model';
+import { trackBy } from '../../utils/list.utils';
 
 @Component({
   selector: 'ap-header',
@@ -9,6 +10,7 @@ import { RouteConfig } from '../../../shared/models/route-config.model';
 })
 export class HeaderComponent implements OnInit {
   routes: RouteConfig[];
+  trackByRouteKey: TrackByFunction<RouteConfig> = trackBy('label');
 
   private readonly AVAILABLE_ROUTES = ['posts', 'authors', 'topics'];
 
@@ -18,6 +20,7 @@ export class HeaderComponent implements OnInit {
 
   private loadAvailableRoutes(): RouteConfig[] {
     return this.AVAILABLE_ROUTES.map((route: string) => ({
+      key: route,
       link: `/${route}`,
       label: route.toUpperCase()
     }));
