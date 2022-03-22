@@ -20,11 +20,11 @@ export class PostsService {
 
   getFilteredPosts(searchTerm: string): Observable<Post[]> {
     return this.getPosts().pipe(
-      map((posts) => posts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase())))
+      map(posts => posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase())))
     );
   }
 
   getPostDetails(id: string): Observable<Post> {
-    return this.getPosts().pipe(map((posts) => posts.find((post) => post.id === id)));
+    return this.getPosts().pipe(map(posts => posts.find(post => post.id === id)));
   }
 }

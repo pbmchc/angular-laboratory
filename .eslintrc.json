@@ -53,8 +53,8 @@
           }
         ],
         "arrow-parens": [
-          "off",
-          "always"
+          "error",
+          "as-needed"
         ],
         "comma-dangle": ["error", "never"],
         "import/order": ["error", {

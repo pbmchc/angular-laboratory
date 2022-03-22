@@ -22,6 +22,6 @@ export class PostListComponent implements OnInit {
   }
 
   filterPosts(searchTerm: string): void {
-    this.postsService.getFilteredPosts(searchTerm).subscribe((posts) => (this.posts = posts));
+    this.postsService.getFilteredPosts(searchTerm).subscribe(posts => this.posts = posts);
   }
 }
