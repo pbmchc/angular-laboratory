@@ -79,6 +79,16 @@
     },
     {
       "files": [
+        "*.js"
+      ],
+      "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+      },
+      "rules": {}
+    },
+    {
+      "files": [
         "*.html"
       ],
       "extends": [
