@@ -24,6 +24,6 @@ jobs:
       - name: Build
         run: npm run build:ci
       - name: Test [UNIT]
-        run: npm run test:ci
+        run: npm run test
       - name: Test [E2E]
         run: npm run e2e
