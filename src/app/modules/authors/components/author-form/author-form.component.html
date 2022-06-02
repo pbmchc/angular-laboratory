@@ -6,14 +6,21 @@
                    [formControlName]="AUTHOR_FORM_CONTROLS.FIRSTNAME">
             <input id="{{ AUTHOR_FORM_CONTROLS.LASTNAME }}-input"
                    [formControlName]="AUTHOR_FORM_CONTROLS.LASTNAME">
-            <span class="author-form-error"
+            <span i18n="@@author_form.error.author_exists"
+                  class="author-form-error"
                   *ngIf="authorForm.errors?.existingAuthor">
                 Author already exists
             </span>
         </div>
         <button type="submit"
                 [disabled]="!authorForm.valid">
-            {{ authorForm.pending ? 'CHECKING...' : 'SAVE' }}
+            <ng-container i18n="@@author_form.button.checking"
+                          *ngIf="authorForm.pending; else saveLabel">
+                CHECKING...
+            </ng-container>
+            <ng-template i18n="@@author_form.button.save" #saveLabel>
+                SAVE
+            </ng-template>
         </button>
     </form>
 </div>

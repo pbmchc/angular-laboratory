@@ -1,0 +1,19 @@
+{
+  "locale": "pl",
+  "translations": {
+    "author_form.button.checking": "SPRAWDZANIE...",
+    "author_form.button.save": "ZAPISZ",
+    "author_form.error.author_exists": "Autor już istnieje",
+    "authors_list.button.add_author": "Dodaj autora",
+    "authors_list.heading": "Autorzy",
+    "common.button.back": "Powrót",
+    "common.input.search.placeholder": "Szukaj...",
+    "post_list.heading": "Lista postów",
+    "post_list.jumbotron.subtitle": "Podtytuł",
+    "post_list.jumbotron.title": "Tytuł",
+    "post_tile.button.read_more": "Czytaj więcej...",
+    "routes.authors": "AUTORZY",
+    "routes.posts": "POSTY",
+    "routes.topics": "TEMATY"
+  }
+}

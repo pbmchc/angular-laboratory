@@ -13,10 +13,19 @@
           "style": "scss"
         }
       },
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "pl": {
+            "translation": "src/locale/messages.pl.json"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/angular-laboratory",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -35,9 +44,14 @@
             "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "i18nMissingTranslation": "warning",
+            "i18nDuplicateTranslation": "warning"
           },
           "configurations": {
+            "pl": {
+              "localize": ["pl"]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -73,6 +87,9 @@
             "browserTarget": "angular-laboratory:build"
           },
           "configurations": {
+            "pl": {
+              "browserTarget": "angular-laboratory:build:pl"
+            },
             "production": {
               "browserTarget": "angular-laboratory:build:production"
             }
