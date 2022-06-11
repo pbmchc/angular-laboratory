@@ -7,6 +7,8 @@ To run the project, after cloning the repository:
 2. use one of the available scripts to start the application or run associated tests:
     ##### `npm start`
     start application (by default on `localhost:4200`)
+    ##### `npm start -- --configuration=pl`
+    start localized application (by default on `localhost:4200`)
     ##### `npm test`
     run unit tests
     ##### `npm run e2e`
