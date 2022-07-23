@@ -50,7 +50,9 @@
           },
           "configurations": {
             "pl": {
-              "localize": ["pl"]
+              "localize": [
+                "pl"
+              ]
             },
             "production": {
               "fileReplacements": [
@@ -159,8 +161,9 @@
       }
     }
   },
-  "defaultProject": "angular-laboratory",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

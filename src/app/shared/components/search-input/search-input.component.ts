@@ -12,7 +12,7 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 export class SearchInputComponent implements OnInit, OnDestroy {
   @Output() searchValueChange = new EventEmitter<string>();
 
-  searchInput: FormControl;
+  searchInput: FormControl<string>;
 
   private onDestroy$ = new Subject<boolean>();
   private DEBOUNCE_TIME = 400;
@@ -27,7 +27,7 @@ export class SearchInputComponent implements OnInit, OnDestroy {
   }
 
   private initializeSearchControl(): void {
-    this.searchInput = new FormControl('');
+    this.searchInput = new FormControl('', { nonNullable: true });
     this.searchInput.valueChanges
       .pipe(
         debounceTime(this.DEBOUNCE_TIME),

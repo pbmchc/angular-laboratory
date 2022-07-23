@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 
+import { AuthorForm } from '../../../../shared/models/author/author-form.model';
 import { Author } from '../../../../shared/models/author/author.model';
 
 import { AuthorFormBuilder } from './author-form-builder.service';
@@ -14,7 +14,7 @@ import { AUTHOR_FORM_CONTROLS } from './author-form.constants';
 })
 export class AuthorFormComponent implements OnInit {
   @Output() saveAuthor = new EventEmitter<Partial<Author>>();
-  authorForm: FormGroup;
+  authorForm: AuthorForm;
   readonly AUTHOR_FORM_CONTROLS = AUTHOR_FORM_CONTROLS;
 
   constructor(private authorFormBuilder: AuthorFormBuilder) {}

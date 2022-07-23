@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AsyncValidator, FormGroup, ValidationErrors } from '@angular/forms';
+import { AsyncValidator, ValidationErrors } from '@angular/forms';
 
 import { Observable } from 'rxjs';
 import { map, catchError, delay } from 'rxjs/operators';
 
-import { AuthorFormValue } from '../../../../shared/models/author/author-form-value.model';
+import { AuthorForm } from '../../../../shared/models/author/author-form.model';
 import { Author } from '../../../../shared/models/author/author.model';
 import { getFullName } from '../../../../shared/utils/string.utils';
 import { AuthorsService } from '../authors.service';
@@ -15,8 +15,8 @@ export class UniqueAuthorValidator implements AsyncValidator {
 
   constructor(private authorsService: AuthorsService) {}
 
-  validate({ value }: FormGroup): Observable<ValidationErrors> {
-    const { firstName, lastName }: AuthorFormValue = value;
+  validate({ value }: AuthorForm): Observable<ValidationErrors> {
+    const { firstName, lastName } = value;
 
     return this.isExistingAuthor(getFullName(firstName, lastName)).pipe(
       map((existingAuthor: Author) => (existingAuthor ? { existingAuthor: true } : null)),
