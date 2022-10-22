@@ -3,7 +3,7 @@
   <ul>
     <li *ngFor="let route of routes; trackBy: trackByRouteKey">
       <a [routerLink]="route.link">
-        {{ route.label }}
+        {{ route.title }}
       </a>
     </li>
   </ul>

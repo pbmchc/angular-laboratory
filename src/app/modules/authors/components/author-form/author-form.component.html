@@ -16,10 +16,10 @@
                 [disabled]="!authorForm.valid">
             <ng-container i18n="@@author_form.button.checking"
                           *ngIf="authorForm.pending; else saveLabel">
-                CHECKING...
+                Checking...
             </ng-container>
             <ng-template i18n="@@author_form.button.save" #saveLabel>
-                SAVE
+                Save
             </ng-template>
         </button>
     </form>
