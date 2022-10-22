@@ -5,6 +5,7 @@ import { PostDetailsComponent } from './pages/post-details/post-details.componen
 import { PostListComponent } from './pages/post-list/post-list.component';
 import { PostDetailsResolver } from './shared/resolvers/post-details.resolver';
 import { PostListResolver } from './shared/resolvers/post-list.resolver';
+import { PostTitleResolver } from './shared/resolvers/post-title.resolver';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
     component: PostDetailsComponent,
     resolve: {
       post: PostDetailsResolver
-    }
+    },
+    title: PostTitleResolver
   }
 ];
 
