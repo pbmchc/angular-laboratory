@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 
-import { ROUTES } from '../constants/routes.constants';
-
 @Injectable({
   providedIn: 'root'
 })

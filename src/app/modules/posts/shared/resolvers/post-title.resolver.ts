@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 import { ROUTES_TITLES } from '../../../../core/constants/routes.constants';
 
 @Injectable({
     providedIn: 'root'
 })
-export class PostTitleResolver implements Resolve<string> {
+export class PostTitleResolver  {
   private readonly POST_IDENTIFIER_KEY = 'id';
 
   resolve(snapshot: ActivatedRouteSnapshot): string {
