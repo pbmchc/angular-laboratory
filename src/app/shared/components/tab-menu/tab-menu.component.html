@@ -1,9 +1,13 @@
 <div class="ap-tab-menu">
-    <ul class="ap-tabs">
-        <li *ngFor="let tab of tabs; trackBy: trackByValue"
-             class="ap-tab"
-             (click)="setActiveTab(tab)">
-            {{tab.label}}
+    <ul class="ap-tabs" role="tablist">
+        <li *ngFor="let tab of tabs; trackBy: trackByValue" class="ap-tab">
+            <a [attr.aria-selected]="tab.value === value"
+               role="tab"
+               tabindex="0"
+               (click)="setActiveTab(tab)"
+               (keyup.enter)="setActiveTab(tab)">
+               {{tab.label}}
+            </a>
         </li>
     </ul>
 </div>

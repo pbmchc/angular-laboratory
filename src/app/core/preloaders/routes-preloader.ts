@@ -9,6 +9,7 @@ import { Observable, of } from 'rxjs';
 export class RoutesPreloader implements PreloadingStrategy {
   private readonly PRELOAD_ROUTE_FLAG = 'preload';
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   preload(route: Route, load: () => Observable<any>): Observable<any> {
     return this.shouldPreloadRoute(route) ? load() : of(null);
   }
