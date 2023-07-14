@@ -2,7 +2,7 @@ describe('Main Page', () => {
   const getPostTiles = () => cy.get('.ap-post-tile');
   const getSearchInput = () => cy.get('.ap-search-input > input');
 
-  before(() => {
+  beforeEach(() => {
     cy.visit('/');
   });
 

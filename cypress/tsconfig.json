@@ -1,11 +1,14 @@
 {
-  "extends": "../tsconfig.json",
-  "include": ["**/*.ts"],
   "compilerOptions": {
-    "sourceMap": false,
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
+    "target": "ES2022",
     "types": [
       "cypress",
       "node"
     ]
-  }
+  },
+  "include": ["**/*.ts"],
 }

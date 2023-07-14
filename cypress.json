@@ -1,5 +1,0 @@
-{
-    "baseUrl": "http://localhost:4200",
-    "screenshotOnRunFailure": false,
-    "video": false
-}
