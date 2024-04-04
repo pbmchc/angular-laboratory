@@ -2,7 +2,7 @@
   "compilerOptions": {
     "lib": [
       "ES2022",
-      "dom"
+      "DOM"
     ],
     "target": "ES2022",
     "types": [
@@ -10,5 +10,8 @@
       "node"
     ]
   },
-  "include": ["**/*.ts"],
+  "include": [
+    "../node_modules/cypress",
+    "**/*.ts"
+  ],
 }

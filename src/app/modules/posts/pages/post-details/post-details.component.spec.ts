@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 
-import { Post } from 'src/app/shared/models/post/post.model';
+import { Post } from '../../../../shared/models/post/post.model';
 
 import { PostDetailsComponent } from './post-details.component';
 
@@ -18,7 +18,7 @@ describe('PostDetailsComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [RouterTestingModule],
+        imports: [RouterModule.forRoot([])],
         declarations: [PostDetailsComponent]
       }).compileComponents();
     })
