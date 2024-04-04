@@ -1,6 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 
 import { AuthorsListComponent } from './authors-list.component';
 
@@ -11,7 +11,7 @@ describe('AuthorsListComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterModule.forRoot([])
       ],
       declarations: [
         AuthorsListComponent

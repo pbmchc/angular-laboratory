@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 
 import { PostListComponent } from './post-list.component';
 
@@ -12,7 +12,7 @@ describe('PostListComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule, RouterTestingModule],
+        imports: [HttpClientTestingModule, RouterModule.forRoot([])],
         declarations: [PostListComponent],
         schemas: [NO_ERRORS_SCHEMA]
       }).compileComponents();

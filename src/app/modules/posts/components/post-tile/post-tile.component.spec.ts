@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 
 import { Post } from '../../../../shared/models/post/post.model';
 
@@ -14,7 +14,7 @@ describe('PostTileComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [RouterTestingModule],
+        imports: [RouterModule.forRoot([])],
         declarations: [PostTileComponent]
       }).compileComponents();
     })
