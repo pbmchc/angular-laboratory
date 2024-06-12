@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -10,17 +10,9 @@ import { PostListComponent } from './pages/post-list/post-list.component';
 import { PostsRoutingModule } from './posts-routing.module';
 
 @NgModule({
-  declarations: [
-    PostTileComponent,
-    PostListComponent,
-    PostDetailsComponent
-  ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    PostsRoutingModule,
-    SharedModule
-  ],
-  exports: []
+  declarations: [PostTileComponent, PostListComponent, PostDetailsComponent],
+  exports: [],
+  imports: [CommonModule, PostsRoutingModule, SharedModule],
+  providers: [provideHttpClient()]
 })
-export class PostsModule { }
+export class PostsModule {}
