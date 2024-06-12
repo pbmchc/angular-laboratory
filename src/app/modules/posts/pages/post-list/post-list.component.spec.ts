@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
@@ -15,7 +15,7 @@ describe('PostListComponent', () => {
       declarations: [PostListComponent],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [RouterModule.forRoot([])],
-      providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+      providers: [provideHttpClient(), provideHttpClientTesting()]
     }).compileComponents();
   }));
 

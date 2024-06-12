@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
@@ -8,7 +8,7 @@ describe('AuthorsService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [],
-      providers: [AuthorsService, provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+      providers: [AuthorsService, provideHttpClient(), provideHttpClientTesting()]
     })
   );
 

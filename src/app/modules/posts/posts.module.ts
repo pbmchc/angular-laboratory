@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -13,6 +13,6 @@ import { PostsRoutingModule } from './posts-routing.module';
   declarations: [PostTileComponent, PostListComponent, PostDetailsComponent],
   exports: [],
   imports: [CommonModule, PostsRoutingModule, SharedModule],
-  providers: [provideHttpClient(withInterceptorsFromDi())]
+  providers: [provideHttpClient()]
 })
 export class PostsModule {}
