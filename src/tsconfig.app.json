@@ -2,10 +2,14 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": []
+    "types": [
+      "@angular/localize"
+    ]
   },
   "files": [
-    "main.ts",
-    "polyfills.ts"
+    "main.ts"
+  ],
+  "include": [
+    "**/*.d.ts"
   ]
 }
