@@ -6,9 +6,10 @@ import { trackBy } from '../../../../shared/utils/list.utils';
 import { PostsService } from '../../shared/posts.service';
 
 @Component({
-  selector: 'ap-post-list',
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.scss']
+    selector: 'ap-post-list',
+    templateUrl: './post-list.component.html',
+    styleUrls: ['./post-list.component.scss'],
+    standalone: false
 })
 export class PostListComponent implements OnInit {
   posts: Post[];
