@@ -5,9 +5,10 @@ import { Author } from '../../../../shared/models/author/author.model';
 import { trackBy } from '../../../../shared/utils/list.utils';
 
 @Component({
-  selector: 'ap-authors-list',
-  templateUrl: './authors-list.component.html',
-  styleUrls: ['./authors-list.component.scss']
+    selector: 'ap-authors-list',
+    templateUrl: './authors-list.component.html',
+    styleUrls: ['./authors-list.component.scss'],
+    standalone: false
 })
 export class AuthorsListComponent implements OnInit {
   authors: Author[];

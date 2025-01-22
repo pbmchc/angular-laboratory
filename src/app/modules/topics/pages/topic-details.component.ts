@@ -5,8 +5,9 @@ import { Topic } from '../../../shared/models/topic/topic.model';
 import { trackBy } from '../../../shared/utils/list.utils';
 
 @Component({
-  selector: 'ap-topic-details',
-  templateUrl: './topic-details.component.html'
+    selector: 'ap-topic-details',
+    templateUrl: './topic-details.component.html',
+    standalone: false
 })
 export class TopicDetailsComponent implements OnInit {
   currentTopic: string;

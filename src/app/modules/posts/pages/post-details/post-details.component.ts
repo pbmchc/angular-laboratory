@@ -4,9 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../../../shared/models/post/post.model';
 
 @Component({
-  selector: 'ap-post-details',
-  templateUrl: './post-details.component.html',
-  styleUrls: ['./post-details.component.scss']
+    selector: 'ap-post-details',
+    templateUrl: './post-details.component.html',
+    styleUrls: ['./post-details.component.scss'],
+    standalone: false
 })
 export class PostDetailsComponent {
   post: Post;

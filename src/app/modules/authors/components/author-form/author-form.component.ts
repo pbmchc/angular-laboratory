@@ -7,10 +7,11 @@ import { AuthorFormBuilder } from './author-form-builder.service';
 import { AUTHOR_FORM_CONTROLS } from './author-form.constants';
 
 @Component({
-  selector: 'ap-author-form',
-  templateUrl: './author-form.component.html',
-  styleUrls: ['./author-form.component.scss'],
-  providers: [AuthorFormBuilder]
+    selector: 'ap-author-form',
+    templateUrl: './author-form.component.html',
+    styleUrls: ['./author-form.component.scss'],
+    providers: [AuthorFormBuilder],
+    standalone: false
 })
 export class AuthorFormComponent implements OnInit {
   @Output() saveAuthor = new EventEmitter<Partial<Author>>();
