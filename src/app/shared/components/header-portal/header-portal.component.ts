@@ -12,8 +12,9 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'ap-header-portal',
-  templateUrl: './header-portal.component.html'
+    selector: 'ap-header-portal',
+    templateUrl: './header-portal.component.html',
+    standalone: false
 })
 export class HeaderPortalComponent implements AfterViewInit, OnDestroy {
   @ViewChild(CdkPortal) private headerPortal: CdkPortal;

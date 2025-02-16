@@ -6,9 +6,10 @@ import { Route } from '../../models/route.model';
 import { trackBy } from '../../utils/list.utils';
 
 @Component({
-  selector: 'ap-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'ap-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: false
 })
 export class HeaderComponent implements OnInit {
   routes: RouteConfig[];

@@ -5,9 +5,10 @@ import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'ap-search-input',
-  templateUrl: './search-input.component.html',
-  styleUrls: ['./search-input.component.scss']
+    selector: 'ap-search-input',
+    templateUrl: './search-input.component.html',
+    styleUrls: ['./search-input.component.scss'],
+    standalone: false
 })
 export class SearchInputComponent implements OnInit, OnDestroy {
   @Output() searchValueChange = new EventEmitter<string>();

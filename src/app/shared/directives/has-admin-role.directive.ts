@@ -3,7 +3,10 @@ import { Directive, TemplateRef, ViewContainerRef, OnInit } from '@angular/core'
 
 import { RolesService } from '../../core/auth/roles.service';
 
-@Directive({ selector: '[apHasAdminRole]' })
+@Directive({
+    selector: '[apHasAdminRole]',
+    standalone: false
+})
 export class HasAdminRoleDirective<T> extends NgIf implements OnInit {
   constructor(templateRef: TemplateRef<NgIfContext<T>>,
               viewContainerRef: ViewContainerRef,
