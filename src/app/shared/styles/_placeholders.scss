@@ -1,8 +1,5 @@
-@use "sass:math";
-
-$apBorderRadius: 2.5px;
-$apAccentColor: lighten(salmon, 2.5);
-$apLightGray: #f3f3f3;
+@use 'sass:math';
+@use './variables' as *;
 
 %ap-list-item {
     border-radius: math.div($apBorderRadius, 2);

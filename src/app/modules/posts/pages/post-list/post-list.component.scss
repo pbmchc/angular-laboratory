@@ -1,4 +1,4 @@
-@import '../../../../shared/styles/base';
+@use '../../../../shared/styles' as *;
 
 .ap-post-list-container {
     .ap-post-list-header {

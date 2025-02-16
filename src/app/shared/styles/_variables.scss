@@ -1,0 +1,6 @@
+@use 'sass:color';
+
+$apBorderRadius: 2.5px;
+
+$apAccentColor: color.scale(salmon, $lightness: 2.5%);
+$apLightGray: #f3f3f3;

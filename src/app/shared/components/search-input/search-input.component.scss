@@ -1,4 +1,5 @@
-@import '../../styles/base';
+@use 'sass:color';
+@use '../../styles' as *;
 
 .ap-search-input {
     position: relative;
@@ -6,7 +7,7 @@
         position: absolute;
         left: 10px;
         top: 5px;
-        color: darken($apLightGray, 10);
+        color: color.scale($apLightGray, $lightness: -10%);
     }
     input {
         @extend %ap-input;
