@@ -47,7 +47,7 @@
     "@angular/localize": "^19.2.9",
     "@cypress/schematic": "2.5.0",
     "@types/jasmine": "~5.1.4",
-    "@types/node": "^18.19.71",
+    "@types/node": "^22.15.30",
     "@typescript-eslint/eslint-plugin": "^8.21.0",
     "@typescript-eslint/parser": "^8.21.0",
     "cypress": "13.0.0",
