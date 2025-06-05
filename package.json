@@ -48,8 +48,8 @@
     "@cypress/schematic": "2.5.0",
     "@types/jasmine": "~5.1.4",
     "@types/node": "^22.15.30",
-    "@typescript-eslint/eslint-plugin": "^8.21.0",
-    "@typescript-eslint/parser": "^8.21.0",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
     "cypress": "13.0.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -64,6 +64,6 @@
     "karma-coverage-istanbul-reporter": "~3.0.3",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
-    "typescript": "~5.7.3"
+    "typescript": "~5.8.3"
   }
 }
