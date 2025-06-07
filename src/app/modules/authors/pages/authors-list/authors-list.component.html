@@ -1,19 +1,21 @@
 <div class="ap-content-container ap-authors-list-container">
-    <div class="ap-authors-list-header">
-        <h1 i18n="@@authors_list.heading">
+  <div class="ap-authors-list-header">
+    <h1 i18n="@@authors_list.heading">
             Authors
         </h1>
-    </div>
-    <ap-header-portal>
-        <div *apHasAdminRole>
-            <button i18n="@@authors_list.button.add_author" routerLink="new">
+  </div>
+  <ap-header-portal>
+    <div *apHasAdminRole>
+      <button i18n="@@authors_list.button.add_author" routerLink="new">
                 Add author
             </button>
-        </div>
-    </ap-header-portal>
-    <div class="ap-authors-list">
-        <div *ngFor="let author of authors; trackBy: trackByAuthorId">
-            <ap-author-list-item [author]="author"></ap-author-list-item>
-        </div>
     </div>
+  </ap-header-portal>
+  <div class="ap-authors-list">
+    @for (author of authors; track trackByAuthorId($index, author)) {
+      <div>
+        <ap-author-list-item [author]="author"></ap-author-list-item>
+      </div>
+    }
+  </div>
 </div>

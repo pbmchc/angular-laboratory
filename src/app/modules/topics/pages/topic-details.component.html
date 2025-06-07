@@ -1,16 +1,18 @@
 <div class="ap-content-container ap-topic-details-container">
-    <ap-header-portal>
-        <div class="ap-topic-tabs">
-            <ap-tab-menu [(ngModel)]="currentTopic"
-                         [tabs]="topicTabs">
-            </ap-tab-menu>
-        </div>
-    </ap-header-portal>
-    <div class="ap-topic-details">
-        <ng-container *ngFor="let topic of topics; trackBy: trackByTitle">
-            <ap-topic-view *ngIf="topic.title === currentTopic"
-                           [topic]="topic">
-            </ap-topic-view>
-        </ng-container>
+  <ap-header-portal>
+    <div class="ap-topic-tabs">
+      <ap-tab-menu [(ngModel)]="currentTopic"
+        [tabs]="topicTabs">
+      </ap-tab-menu>
     </div>
+  </ap-header-portal>
+  <div class="ap-topic-details">
+    @for (topic of topics; track trackByTitle($index, topic)) {
+      @if (topic.title === currentTopic) {
+        <ap-topic-view
+          [topic]="topic">
+        </ap-topic-view>
+      }
+    }
+  </div>
 </div>

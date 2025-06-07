@@ -1,4 +1,4 @@
-import { Component, OnInit, TrackByFunction } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Author } from '../../../../shared/models/author/author.model';
@@ -12,7 +12,7 @@ import { trackBy } from '../../../../shared/utils/list.utils';
 })
 export class AuthorsListComponent implements OnInit {
   authors: Author[];
-  trackByAuthorId: TrackByFunction<Author> = trackBy('id');
+  trackByAuthorId = trackBy<Author>('id');
 
   constructor(private route: ActivatedRoute) {}
 

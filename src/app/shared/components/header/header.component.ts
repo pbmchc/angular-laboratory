@@ -1,4 +1,4 @@
-import { Component, OnInit, TrackByFunction } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ROUTES } from '../../../core/constants/routes.constants';
 import { RouteConfig } from '../../models/route-config.model';
@@ -13,7 +13,7 @@ import { trackBy } from '../../utils/list.utils';
 })
 export class HeaderComponent implements OnInit {
   routes: RouteConfig[];
-  trackByRouteKey: TrackByFunction<RouteConfig> = trackBy('label');
+  trackByRouteKey = trackBy<RouteConfig>('key');
 
   ngOnInit() {
     this.routes = this.getAvailableRoutes();

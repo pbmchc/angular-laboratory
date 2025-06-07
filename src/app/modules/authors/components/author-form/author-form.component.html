@@ -1,26 +1,31 @@
 <div class="author-form">
-    <form [formGroup]="authorForm"
-          (ngSubmit)="onSubmit()">
-        <div class="author-form-group">
-            <input id="{{ AUTHOR_FORM_CONTROLS.FIRSTNAME }}-input"
-                   [formControlName]="AUTHOR_FORM_CONTROLS.FIRSTNAME">
-            <input id="{{ AUTHOR_FORM_CONTROLS.LASTNAME }}-input"
-                   [formControlName]="AUTHOR_FORM_CONTROLS.LASTNAME">
+  <form [formGroup]="authorForm"
+    (ngSubmit)="onSubmit()">
+    <div class="author-form-group">
+      <input id="{{ AUTHOR_FORM_CONTROLS.FIRSTNAME }}-input"
+        [formControlName]="AUTHOR_FORM_CONTROLS.FIRSTNAME">
+        <input id="{{ AUTHOR_FORM_CONTROLS.LASTNAME }}-input"
+          [formControlName]="AUTHOR_FORM_CONTROLS.LASTNAME">
+          @if (authorForm.errors?.existingAuthor) {
             <span i18n="@@author_form.error.author_exists"
-                  class="author-form-error"
-                  *ngIf="authorForm.errors?.existingAuthor">
+              class="author-form-error"
+              >
                 Author already exists
             </span>
+          }
         </div>
         <button type="submit"
-                [disabled]="!authorForm.valid">
+          [disabled]="!authorForm.valid">
+          @if (authorForm.pending) {
             <ng-container i18n="@@author_form.button.checking"
-                          *ngIf="authorForm.pending; else saveLabel">
+              >
                 Checking...
             </ng-container>
-            <ng-template i18n="@@author_form.button.save" #saveLabel>
+          } @else {
+            <ng-container i18n="@@author_form.button.save">
                 Save
-            </ng-template>
+            </ng-container>
+          }
         </button>
-    </form>
-</div>
+      </form>
+    </div>
