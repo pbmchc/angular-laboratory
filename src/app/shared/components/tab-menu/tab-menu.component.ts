@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, TrackByFunction } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { Tab } from '../../models/tab/tab.model';
@@ -20,7 +20,7 @@ import { trackBy } from '../../utils/list.utils';
 export class TabMenuComponent implements ControlValueAccessor {
   @Input() tabs: Tab[];
   value: string;
-  trackByValue: TrackByFunction<Tab> = trackBy('value');
+  trackByValue = trackBy<Tab>('value');
 
   onChange: (value: string) => void = () => {};
   onTouched: () => void = () => {};

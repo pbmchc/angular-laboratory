@@ -1,4 +1,4 @@
-import { Component, OnInit, TrackByFunction } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Post } from '../../../../shared/models/post/post.model';
@@ -13,7 +13,7 @@ import { PostsService } from '../../shared/posts.service';
 })
 export class PostListComponent implements OnInit {
   posts: Post[];
-  trackByPostId: TrackByFunction<Post> = trackBy('id');
+  trackByPostId = trackBy<Post>('id');
 
   constructor(private route: ActivatedRoute,
               private postsService: PostsService) {}

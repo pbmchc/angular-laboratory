@@ -1,4 +1,4 @@
-import { Component, OnInit, TrackByFunction } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Tab } from '../../../shared/models/tab/tab.model';
 import { Topic } from '../../../shared/models/topic/topic.model';
@@ -13,7 +13,7 @@ export class TopicDetailsComponent implements OnInit {
   currentTopic: string;
   topics: Topic[];
   topicTabs: Tab[];
-  trackByTitle: TrackByFunction<Topic> = trackBy('title');
+  trackByTitle = trackBy<Topic>('title');
 
   ngOnInit() {
     this.topics = this.generateTopics();

@@ -1,11 +1,13 @@
 <div class="ap-header">
   <div class="ap-header-title">ANGULAB</div>
   <ul>
-    <li *ngFor="let route of routes; trackBy: trackByRouteKey">
-      <a [routerLink]="route.link">
-        {{ route.title }}
-      </a>
-    </li>
+    @for (route of routes; track trackByRouteKey($index, route)) {
+      <li>
+        <a [routerLink]="route.link">
+          {{ route.title }}
+        </a>
+      </li>
+    }
   </ul>
 </div>
 <div id="ap-header-outlet" class="ap-header-outlet"></div>
