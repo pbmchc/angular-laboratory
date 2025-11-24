@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
@@ -8,8 +8,8 @@ import { PostsService } from '../posts.service';
 @Injectable({
   providedIn: 'root'
 })
-export class PostListResolver  {
-  constructor(private postsService: PostsService) {}
+export class PostListResolver {
+  private postsService = inject(PostsService);
 
   resolve(): Observable<Post[]> {
     return this.postsService.getPosts();

@@ -4,27 +4,25 @@ import {
   AfterViewInit,
   ApplicationRef,
   Component,
-  Inject,
   Injector,
   OnDestroy,
-  ViewChild
+  ViewChild,
+  inject
 } from '@angular/core';
 
 @Component({
-    selector: 'ap-header-portal',
-    templateUrl: './header-portal.component.html',
-    standalone: false
+  selector: 'ap-header-portal',
+  templateUrl: './header-portal.component.html',
+  standalone: false
 })
 export class HeaderPortalComponent implements AfterViewInit, OnDestroy {
+  private document = inject<Document>(DOCUMENT);
+  private applicationRef = inject(ApplicationRef);
+  private injector = inject(Injector);
+
   @ViewChild(CdkPortal) private headerPortal: CdkPortal;
   private host: DomPortalOutlet;
   private readonly OUTLET_ELEMENT_ID: string = 'ap-header-outlet';
-
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private applicationRef: ApplicationRef,
-    private injector: Injector
-  ) {}
 
   ngAfterViewInit() {
     this.host = new DomPortalOutlet(

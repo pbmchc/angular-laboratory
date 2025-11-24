@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RestService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   get<T>(url: string): Observable<T> {
     return this.http.get<T>(url);

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { AsyncValidator, ValidationErrors } from '@angular/forms';
 
 import { Observable } from 'rxjs';
@@ -11,15 +11,17 @@ import { AuthorsService } from '../authors.service';
 
 @Injectable()
 export class UniqueAuthorValidator implements AsyncValidator {
-  private readonly SIMULATED_DELAY = 1000;
+  private authorsService = inject(AuthorsService);
 
-  constructor(private authorsService: AuthorsService) {}
+  private readonly SIMULATED_DELAY = 1000;
 
   validate({ value }: AuthorForm): Observable<ValidationErrors> {
     const { firstName, lastName } = value;
 
     return this.isExistingAuthor(getFullName(firstName, lastName)).pipe(
-      map((existingAuthor: Author) => (existingAuthor ? { existingAuthor: true } : null)),
+      map((existingAuthor: Author) =>
+        existingAuthor ? { existingAuthor: true } : null
+      ),
       catchError(() => null)
     );
   }
@@ -27,7 +29,9 @@ export class UniqueAuthorValidator implements AsyncValidator {
   private isExistingAuthor(fullName: string): Observable<Author> {
     return this.authorsService.getAuthors().pipe(
       delay(this.SIMULATED_DELAY),
-      map((authors: Author[]) => authors.find(({ name }: Author) => name === fullName))
+      map((authors: Author[]) =>
+        authors.find(({ name }: Author) => name === fullName)
+      )
     );
   }
 }

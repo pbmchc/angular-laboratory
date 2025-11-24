@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
@@ -8,10 +8,10 @@ import { Author } from '../../../shared/models/author/author.model';
 
 @Injectable()
 export class AuthorsService {
+  private restService = inject(RestService);
+
   private authors: Author[] = [];
   private authorsFetched: boolean;
-
-  constructor(private restService: RestService) {}
 
   getAuthors(): Observable<Author[]> {
     return !this.authorsFetched ? this.fetchAuthors() : of(this.authors);

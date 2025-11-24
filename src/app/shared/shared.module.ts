@@ -1,10 +1,13 @@
 import { PortalModule } from '@angular/cdk/portal';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import {
+  FontAwesomeModule,
+  FaIconLibrary
+} from '@fortawesome/angular-fontawesome';
 import { fas, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { HeaderComponent } from './components/header/header.component';
@@ -41,7 +44,9 @@ import { HasAdminRoleDirective } from './directives/has-admin-role.directive';
   ]
 })
 export class SharedModule {
-  constructor(private library: FaIconLibrary) {
+  private library = inject(FaIconLibrary);
+
+  constructor() {
     this.library.addIconPacks(fas);
     this.library.addIcons(faSearch);
   }
