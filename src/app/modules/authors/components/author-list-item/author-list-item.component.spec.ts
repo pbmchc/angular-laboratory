@@ -8,15 +8,16 @@ describe('AuthorListItemComponent', () => {
   let component: AuthorListItemComponent;
   let fixture: ComponentFixture<AuthorListItemComponent>;
 
-  const mockAuthor = (id: string = 'id', name: string = 'John Doe'): Author => ({ id, name });
+  const mockAuthor = (
+    id: string = 'id',
+    name: string = 'John Doe'
+  ): Author => ({ id, name });
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [AuthorListItemComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [AuthorListItemComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthorListItemComponent);

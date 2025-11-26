@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, inject } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthorForm } from '../../../../shared/models/author/author-form.model';
 import { Author } from '../../../../shared/models/author/author.model';
@@ -11,7 +12,7 @@ import { AUTHOR_FORM_CONTROLS } from './author-form.constants';
   templateUrl: './author-form.component.html',
   styleUrls: ['./author-form.component.scss'],
   providers: [AuthorFormBuilder],
-  standalone: false
+  imports: [FormsModule, ReactiveFormsModule]
 })
 export class AuthorFormComponent implements OnInit {
   private authorFormBuilder = inject(AuthorFormBuilder);

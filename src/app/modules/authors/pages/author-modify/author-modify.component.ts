@@ -1,14 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { Author } from '../../../../shared/models/author/author.model';
+import { AuthorFormComponent } from '../../components/author-form/author-form.component';
 import { AuthorsService } from '../../shared/authors.service';
 
 @Component({
   selector: 'ap-author-modify',
   templateUrl: './author-modify.component.html',
   styleUrls: ['./author-modify.component.scss'],
-  standalone: false
+  imports: [AuthorFormComponent, RouterLink]
 })
 export class AuthorModifyComponent {
   private router = inject(Router);

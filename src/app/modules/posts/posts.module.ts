@@ -10,9 +10,15 @@ import { PostListComponent } from './pages/post-list/post-list.component';
 import { PostsRoutingModule } from './posts-routing.module';
 
 @NgModule({
-  declarations: [PostTileComponent, PostListComponent, PostDetailsComponent],
   exports: [],
-  imports: [CommonModule, PostsRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    PostsRoutingModule,
+    SharedModule,
+    PostTileComponent,
+    PostDetailsComponent,
+    PostListComponent
+  ],
   providers: [provideHttpClient()]
 })
 export class PostsModule {}

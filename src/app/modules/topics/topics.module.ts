@@ -8,14 +8,12 @@ import { TopicDetailsComponent } from './pages/topic-details.component';
 import { TopicsRoutingModule } from './topics-routing.module';
 
 @NgModule({
-  declarations: [
-    TopicDetailsComponent,
-    TopicViewComponent
-  ],
   imports: [
     CommonModule,
     SharedModule,
-    TopicsRoutingModule
+    TopicsRoutingModule,
+    TopicDetailsComponent,
+    TopicViewComponent
   ],
   exports: []
 })

@@ -13,7 +13,7 @@ import {
 @Component({
   selector: 'ap-header-portal',
   templateUrl: './header-portal.component.html',
-  standalone: false
+  imports: [CdkPortal]
 })
 export class HeaderPortalComponent implements AfterViewInit, OnDestroy {
   private document = inject<Document>(DOCUMENT);

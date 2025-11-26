@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { ROUTES } from '../../../core/constants/routes.constants';
 import { RouteConfig } from '../../models/route-config.model';
@@ -6,10 +7,10 @@ import { Route } from '../../models/route.model';
 import { trackBy } from '../../utils/list.utils';
 
 @Component({
-    selector: 'ap-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss'],
-    standalone: false
+  selector: 'ap-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
+  imports: [RouterLink]
 })
 export class HeaderComponent implements OnInit {
   routes: RouteConfig[];

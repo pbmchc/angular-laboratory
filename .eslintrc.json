@@ -34,7 +34,6 @@
             "style": "camelCase"
           }
         ],
-        "@angular-eslint/prefer-standalone": ["off"],
         "@typescript-eslint/explicit-member-accessibility": [
           "off",
           {

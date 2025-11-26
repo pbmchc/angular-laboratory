@@ -11,14 +11,11 @@ describe('PostTileComponent', () => {
 
   const mockPost = (id: string = 'id'): Post => ({ id } as Post);
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [RouterModule.forRoot([])],
-        declarations: [PostTileComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterModule.forRoot([]), PostTileComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PostTileComponent);

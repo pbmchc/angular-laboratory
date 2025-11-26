@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { Post } from '../../../../shared/models/post/post.model';
 
@@ -7,7 +7,7 @@ import { Post } from '../../../../shared/models/post/post.model';
   selector: 'ap-post-details',
   templateUrl: './post-details.component.html',
   styleUrls: ['./post-details.component.scss'],
-  standalone: false
+  imports: [RouterLink]
 })
 export class PostDetailsComponent {
   private route = inject(ActivatedRoute);

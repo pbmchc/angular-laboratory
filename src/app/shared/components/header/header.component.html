@@ -2,11 +2,11 @@
   <div class="ap-header-title">ANGULAB</div>
   <ul>
     @for (route of routes; track trackByRouteKey($index, route)) {
-      <li>
-        <a [routerLink]="route.link">
-          {{ route.title }}
-        </a>
-      </li>
+    <li>
+      <a [routerLink]="route.link">
+        {{ route.title }}
+      </a>
+    </li>
     }
   </ul>
 </div>

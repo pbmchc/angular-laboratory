@@ -1,14 +1,39 @@
 /// <reference types="@angular/localize" />
 
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {
+  enableProdMode,
+  provideZoneChangeDetection,
+  importProvidersFrom
+} from '@angular/core';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 
-import { AppModule } from './app/app.module';
+import { AppRoutingModule } from './app/app-routing.module';
+import { AppComponent } from './app/app.component';
+import { PostsModule } from './app/modules/posts/posts.module';
+import { UserRole } from './app/shared/enums/user-role.enum';
+import { SharedModule } from './app/shared/shared.module';
+import { USER } from './app/shared/tokens/user.token';
 import { environment } from './environments/environment';
 
-if(environment.production) {
+if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(
+      BrowserModule,
+      AppRoutingModule,
+      PostsModule,
+      SharedModule
+    ),
+    {
+      provide: USER,
+      useValue: {
+        id: 'ID_1',
+        roles: [UserRole.Admin]
+      }
+    },
+    provideZoneChangeDetection()
+  ]
+}).catch((err) => console.error(err));

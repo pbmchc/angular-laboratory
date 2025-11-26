@@ -4,14 +4,24 @@
 
 import { getTestBed } from '@angular/core/testing';
 import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
+  BrowserTestingModule,
+  platformBrowserTesting
+} from '@angular/platform-browser/testing';
 
-// First, initialize the Angular testing environment.
+import { UserRole } from './app/shared/enums/user-role.enum';
+import { USER } from './app/shared/tokens/user.token';
+
 getTestBed().initTestEnvironment(
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting(), {
-    teardown: { destroyAfterEach: false }
-  }
+  BrowserTestingModule,
+  platformBrowserTesting([
+    [
+      {
+        provide: USER,
+        useValue: {
+          id: 'ID_1',
+          roles: [UserRole.Admin]
+        }
+      }
+    ]
+  ])
 );

@@ -1,14 +1,7 @@
-import { PortalModule } from '@angular/cdk/portal';
 import { CommonModule } from '@angular/common';
-import { NgModule, inject } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
-import {
-  FontAwesomeModule,
-  FaIconLibrary
-} from '@fortawesome/angular-fontawesome';
-import { fas, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderPortalComponent } from './components/header-portal/header-portal.component';
@@ -17,37 +10,25 @@ import { TabMenuComponent } from './components/tab-menu/tab-menu.component';
 import { HasAdminRoleDirective } from './directives/has-admin-role.directive';
 
 @NgModule({
-  declarations: [
-    HasAdminRoleDirective,
-    HeaderComponent,
-    HeaderPortalComponent,
-    SearchInputComponent,
-    TabMenuComponent
-  ],
   imports: [
     CommonModule,
     FormsModule,
-    PortalModule,
     ReactiveFormsModule,
     RouterModule,
-    FontAwesomeModule
-  ],
-  exports: [
-    FormsModule,
-    HasAdminRoleDirective,
     HeaderComponent,
     HeaderPortalComponent,
     SearchInputComponent,
-    PortalModule,
+    TabMenuComponent,
+    HasAdminRoleDirective
+  ],
+  exports: [
+    FormsModule,
     ReactiveFormsModule,
-    TabMenuComponent
+    HeaderComponent,
+    HeaderPortalComponent,
+    SearchInputComponent,
+    TabMenuComponent,
+    HasAdminRoleDirective
   ]
 })
-export class SharedModule {
-  private library = inject(FaIconLibrary);
-
-  constructor() {
-    this.library.addIconPacks(fas);
-    this.library.addIcons(faSearch);
-  }
-}
+export class SharedModule {}

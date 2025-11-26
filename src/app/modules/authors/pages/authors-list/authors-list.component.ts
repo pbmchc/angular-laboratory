@@ -1,14 +1,22 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
+import { HeaderPortalComponent } from '../../../../shared/components/header-portal/header-portal.component';
+import { HasAdminRoleDirective } from '../../../../shared/directives/has-admin-role.directive';
 import { Author } from '../../../../shared/models/author/author.model';
 import { trackBy } from '../../../../shared/utils/list.utils';
+import { AuthorListItemComponent } from '../../components/author-list-item/author-list-item.component';
 
 @Component({
   selector: 'ap-authors-list',
   templateUrl: './authors-list.component.html',
   styleUrls: ['./authors-list.component.scss'],
-  standalone: false
+  imports: [
+    AuthorListItemComponent,
+    HeaderPortalComponent,
+    HasAdminRoleDirective,
+    RouterLink
+  ]
 })
 export class AuthorsListComponent implements OnInit {
   private route = inject(ActivatedRoute);

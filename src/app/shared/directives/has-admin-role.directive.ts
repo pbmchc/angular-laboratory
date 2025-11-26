@@ -10,8 +10,7 @@ import {
 import { RolesService } from '../../core/auth/roles.service';
 
 @Directive({
-  selector: '[apHasAdminRole]',
-  standalone: false
+  selector: '[apHasAdminRole]'
 })
 export class HasAdminRoleDirective<T> extends NgIf implements OnInit {
   private rolesService = inject(RolesService);

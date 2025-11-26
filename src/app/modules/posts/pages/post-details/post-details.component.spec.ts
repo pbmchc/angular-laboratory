@@ -9,20 +9,17 @@ describe('PostDetailsComponent', () => {
   let component: PostDetailsComponent;
   let fixture: ComponentFixture<PostDetailsComponent>;
 
-  const mockPost = (id: string = 'id', title: string = '', description: string = ''): Post => ({
-    id,
-    title,
-    description
-  });
+  const mockPost = (
+    id: string = 'id',
+    title: string = '',
+    description: string = ''
+  ): Post => ({ id, title, description });
 
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [RouterModule.forRoot([])],
-        declarations: [PostDetailsComponent]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterModule.forRoot([]), PostDetailsComponent]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PostDetailsComponent);
