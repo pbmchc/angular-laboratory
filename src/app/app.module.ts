@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, provideZoneChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +22,8 @@ import { USER } from './shared/tokens/user.token';
     {
       provide: USER,
       useValue: { id: 'ID_1', roles: [UserRole.Admin] }
-    }
+    },
+    provideZoneChangeDetection()
   ],
   bootstrap: [AppComponent]
 })
