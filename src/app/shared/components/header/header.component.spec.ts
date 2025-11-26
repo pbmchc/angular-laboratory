@@ -9,14 +9,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports:[
-        RouterModule.forRoot([])
-      ],
-      declarations: [
-        HeaderComponent
-      ]
-    })
-    .compileComponents();
+      imports: [RouterModule.forRoot([]), HeaderComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

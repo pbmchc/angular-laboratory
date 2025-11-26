@@ -5,17 +5,16 @@ import { Tab } from '../../models/tab/tab.model';
 import { trackBy } from '../../utils/list.utils';
 
 @Component({
-    selector: 'ap-tab-menu',
-    templateUrl: './tab-menu.component.html',
-    styleUrls: ['./tab-menu.component.scss'],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => TabMenuComponent),
-            multi: true
-        }
-    ],
-    standalone: false
+  selector: 'ap-tab-menu',
+  templateUrl: './tab-menu.component.html',
+  styleUrls: ['./tab-menu.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TabMenuComponent),
+      multi: true
+    }
+  ]
 })
 export class TabMenuComponent implements ControlValueAccessor {
   @Input() tabs: Tab[];

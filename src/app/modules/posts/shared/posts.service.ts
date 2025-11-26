@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { Post } from '../../../shared/models/post/post.model';
   providedIn: 'root'
 })
 export class PostsService {
-  constructor(private restService: RestService) {}
+  private restService = inject(RestService);
 
   getPosts(): Observable<Post[]> {
     const url = 'assets/posts.json';
@@ -20,11 +20,17 @@ export class PostsService {
 
   getFilteredPosts(searchTerm: string): Observable<Post[]> {
     return this.getPosts().pipe(
-      map(posts => posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase())))
+      map((posts) =>
+        posts.filter((post) =>
+          post.title.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      )
     );
   }
 
   getPostDetails(id: string): Observable<Post> {
-    return this.getPosts().pipe(map(posts => posts.find(post => post.id === id)));
+    return this.getPosts().pipe(
+      map((posts) => posts.find((post) => post.id === id))
+    );
   }
 }

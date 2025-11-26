@@ -13,21 +13,15 @@ import { AuthorsListResolver } from './shared/resolvers/authors-list.resolver';
 import { UniqueAuthorValidator } from './shared/validators/unique-author.validator';
 
 @NgModule({
-  declarations: [
+  imports: [
+    CommonModule,
+    AuthorsRoutingModule,
+    SharedModule,
     AuthorFormComponent,
     AuthorsListComponent,
     AuthorListItemComponent,
     AuthorModifyComponent
   ],
-  imports: [
-    CommonModule,
-    AuthorsRoutingModule,
-    SharedModule
-  ],
-  providers: [
-    AuthorsListResolver,
-    AuthorsService,
-    UniqueAuthorValidator
-  ]
+  providers: [AuthorsListResolver, AuthorsService, UniqueAuthorValidator]
 })
 export class AuthorsModule {}

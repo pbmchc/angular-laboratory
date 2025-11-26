@@ -55,11 +55,6 @@
             "varsIgnorePattern": "^_"
           }
         ],
-        "arrow-parens": [
-          "error",
-          "as-needed"
-        ],
-        "comma-dangle": ["error", "never"],
         "import/order": ["error", {
           "alphabetize": {
             "order": "asc",

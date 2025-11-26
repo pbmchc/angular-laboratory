@@ -1,5 +1,9 @@
-import { Injectable } from '@angular/core';
-import { AbstractControlOptions, NonNullableFormBuilder, Validators } from '@angular/forms';
+import { Injectable, inject } from '@angular/core';
+import {
+  AbstractControlOptions,
+  NonNullableFormBuilder,
+  Validators
+} from '@angular/forms';
 
 import { AuthorFormValue } from '../../../../shared/models/author/author-form-value.model';
 import { AuthorForm } from '../../../../shared/models/author/author-form.model';
@@ -11,8 +15,8 @@ import { AUTHOR_FORM_CONTROLS } from './author-form.constants';
 
 @Injectable()
 export class AuthorFormBuilder {
-  constructor(private formBuilder: NonNullableFormBuilder,
-              private uniqueAuthorValidator: UniqueAuthorValidator) {}
+  private formBuilder = inject(NonNullableFormBuilder);
+  private uniqueAuthorValidator = inject(UniqueAuthorValidator);
 
   buildAuthorForm(): AuthorForm {
     return this.formBuilder.group(
@@ -24,13 +28,18 @@ export class AuthorFormBuilder {
     );
   }
 
-  formatAuthorFormValue({ firstName, lastName }: Partial<AuthorFormValue>): Partial<Author> {
+  formatAuthorFormValue({
+    firstName,
+    lastName
+  }: Partial<AuthorFormValue>): Partial<Author> {
     return { name: getFullName(firstName, lastName) };
   }
 
   private getAuthorFormOptions(): AbstractControlOptions {
     return {
-      asyncValidators: this.uniqueAuthorValidator.validate.bind(this.uniqueAuthorValidator),
+      asyncValidators: this.uniqueAuthorValidator.validate.bind(
+        this.uniqueAuthorValidator
+      ),
       updateOn: 'blur'
     };
   }

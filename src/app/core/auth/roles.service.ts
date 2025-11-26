@@ -1,4 +1,4 @@
-import { Inject, Injectable, Optional } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { UserRole } from '../../shared/enums/user-role.enum';
 import { User } from '../../shared/models/auth/user.model';
@@ -8,7 +8,7 @@ import { USER } from '../../shared/tokens/user.token';
   providedIn: 'root'
 })
 export class RolesService {
-  constructor(@Optional() @Inject(USER) private user: User) {}
+  private user = inject<User>(USER, { optional: true });
 
   isAdmin(): boolean {
     return this.hasRole(UserRole.Admin);

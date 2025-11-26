@@ -4,26 +4,23 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { SearchInputComponent } from './search-input.component';
 
 describe('SearchInputComponent', () => {
-    let component: SearchInputComponent;
-    let fixture: ComponentFixture<SearchInputComponent>;
+  let component: SearchInputComponent;
+  let fixture: ComponentFixture<SearchInputComponent>;
 
-    beforeEach(waitForAsync(() => {
-        TestBed.configureTestingModule({
-            declarations: [
-                SearchInputComponent
-            ],
-            schemas: [NO_ERRORS_SCHEMA]
-        })
-        .compileComponents();
-    }));
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [SearchInputComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(SearchInputComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(SearchInputComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('should create', () => {
-        expect(component).toBeTruthy();
-    });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

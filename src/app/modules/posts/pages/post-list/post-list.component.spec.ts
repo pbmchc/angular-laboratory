@@ -12,10 +12,9 @@ describe('PostListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [PostListComponent],
-      schemas: [NO_ERRORS_SCHEMA],
-      imports: [RouterModule.forRoot([])],
-      providers: [provideHttpClient(), provideHttpClientTesting()]
+      imports: [RouterModule.forRoot([]), PostListComponent],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
