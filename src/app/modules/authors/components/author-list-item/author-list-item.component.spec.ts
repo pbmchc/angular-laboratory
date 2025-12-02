@@ -8,10 +8,7 @@ describe('AuthorListItemComponent', () => {
   let component: AuthorListItemComponent;
   let fixture: ComponentFixture<AuthorListItemComponent>;
 
-  const mockAuthor = (
-    id: string = 'id',
-    name: string = 'John Doe'
-  ): Author => ({ id, name });
+  const mockAuthor = (id = 'id', name = 'John Doe'): Author => ({ id, name });
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({

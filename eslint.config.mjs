@@ -12,6 +12,7 @@ export default defineConfig([
     extends: [
       eslint.configs.recommended,
       tseslint.configs.recommended,
+      tseslint.configs.stylistic,
       ng.configs.tsRecommended,
       eslintPluginImport.flatConfigs.recommended,
       eslintPluginImport.flatConfigs.typescript,

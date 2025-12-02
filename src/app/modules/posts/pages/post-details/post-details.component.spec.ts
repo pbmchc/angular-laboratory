@@ -9,11 +9,11 @@ describe('PostDetailsComponent', () => {
   let component: PostDetailsComponent;
   let fixture: ComponentFixture<PostDetailsComponent>;
 
-  const mockPost = (
-    id: string = 'id',
-    title: string = '',
-    description: string = ''
-  ): Post => ({ id, title, description });
+  const mockPost = (id = 'id', title = '', description = ''): Post => ({
+    id,
+    title,
+    description
+  });
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
