@@ -29,7 +29,7 @@ export class TopicDetailsComponent implements OnInit {
     this.topicTabs = this.generateTopicTabs();
   }
 
-  private generateTopics(length: number = 3): Topic[] {
+  private generateTopics(length = 3): Topic[] {
     return Array.from({ length }).map((_, index) => ({
       title: `Topic ${index + 1}`,
       description: `Some description for topic ${index + 1}`

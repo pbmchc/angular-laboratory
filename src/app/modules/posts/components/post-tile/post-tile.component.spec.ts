@@ -9,7 +9,7 @@ describe('PostTileComponent', () => {
   let component: PostTileComponent;
   let fixture: ComponentFixture<PostTileComponent>;
 
-  const mockPost = (id: string = 'id'): Post => ({ id } as Post);
+  const mockPost = (id = 'id'): Post => ({ id } as Post);
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({

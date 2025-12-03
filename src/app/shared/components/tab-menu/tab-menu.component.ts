@@ -21,15 +21,15 @@ export class TabMenuComponent implements ControlValueAccessor {
   value: string;
   trackByValue = trackBy<Tab>('value');
 
-  onChange: (value: string) => void = () => {};
-  onTouched: () => void = () => {};
+  onChange: (value: string) => void;
+  onTouched: () => void;
 
   writeValue(value: string) {
     const [{ value: defaultValue }]: Tab[] = this.tabs;
     const initialValue: string = value || defaultValue;
 
     this.value = initialValue;
-    this.onChange(initialValue);
+    this.onChange?.(initialValue);
   }
 
   registerOnChange(fn: (value: string) => void): void {
