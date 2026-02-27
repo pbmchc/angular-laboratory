@@ -7,6 +7,9 @@ updates:
       day: 'friday'
       time: '17:00'
       timezone: 'Europe/Warsaw'
+    cooldown:
+      semver-patch-days: 7
+      semver-minor-days: 14
     groups:
       angular:
         applies-to: version-updates
