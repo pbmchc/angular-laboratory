@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, inject } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AuthorFormValue } from '../../../../shared/models/author/author-form-value.model';
 import { AuthorForm } from '../../../../shared/models/author/author-form.model';
 import { Author } from '../../../../shared/models/author/author.model';
 
@@ -17,8 +18,8 @@ import { AUTHOR_FORM_CONTROLS } from './author-form.constants';
 export class AuthorFormComponent implements OnInit {
   private authorFormBuilder = inject(AuthorFormBuilder);
 
-  @Output() saveAuthor = new EventEmitter<Partial<Author>>();
-  authorForm: AuthorForm;
+  @Output() saveAuthor = new EventEmitter<Pick<Author, 'name'>>();
+  authorForm!: AuthorForm;
   readonly AUTHOR_FORM_CONTROLS = AUTHOR_FORM_CONTROLS;
 
   ngOnInit() {
@@ -27,7 +28,7 @@ export class AuthorFormComponent implements OnInit {
 
   onSubmit() {
     const author = this.authorFormBuilder.formatAuthorFormValue(
-      this.authorForm.value
+      this.authorForm.value as AuthorFormValue
     );
 
     this.saveAuthor.emit(author);

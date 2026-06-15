@@ -14,7 +14,6 @@ export class PostsService {
 
   getPosts(): Observable<Post[]> {
     const url = 'assets/posts.json';
-
     return this.restService.get(url);
   }
 
@@ -28,7 +27,7 @@ export class PostsService {
     );
   }
 
-  getPostDetails(id: string): Observable<Post> {
+  getPostDetails(id: string): Observable<Post | undefined> {
     return this.getPosts().pipe(
       map((posts) => posts.find((post) => post.id === id))
     );

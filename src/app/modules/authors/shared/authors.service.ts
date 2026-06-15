@@ -11,22 +11,22 @@ export class AuthorsService {
   private restService = inject(RestService);
 
   private authors: Author[] = [];
-  private authorsFetched: boolean;
+  private authorsFetched = false;
 
   getAuthors(): Observable<Author[]> {
     return !this.authorsFetched ? this.fetchAuthors() : of(this.authors);
   }
 
-  addAuthor({ name }: Partial<Author>): Observable<number> {
+  addAuthor({ name }: Pick<Author, 'name'>): Observable<number> {
     return of(this.authors.push({ id: `${Date.now()}`, name }));
   }
 
   private fetchAuthors(): Observable<Author[]> {
     const url = 'assets/authors.json';
 
-    return this.restService.get(url).pipe(
-      map((authors: Author[]) => authors.concat(this.authors)),
-      tap((authors: Author[]) => {
+    return this.restService.get<Author[]>(url).pipe(
+      map((authors) => authors.concat(this.authors)),
+      tap((authors) => {
         this.authorsFetched = true;
         this.authors = authors;
       })

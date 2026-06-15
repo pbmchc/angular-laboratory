@@ -7,5 +7,5 @@ import { Topic } from '../../../../shared/models/topic/topic.model';
   templateUrl: './topic-view.component.html'
 })
 export class TopicViewComponent {
-  @Input() topic: Topic;
+  @Input({ required: true }) topic!: Topic;
 }

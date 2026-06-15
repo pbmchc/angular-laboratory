@@ -19,9 +19,9 @@ import { TopicViewComponent } from '../components/topic-view/topic-view.componen
   ]
 })
 export class TopicDetailsComponent implements OnInit {
-  currentTopic: string;
-  topics: Topic[];
-  topicTabs: Tab[];
+  currentTopic = '';
+  topics!: Topic[];
+  topicTabs!: Tab[];
   trackByTitle = trackBy<Topic>('title');
 
   ngOnInit() {

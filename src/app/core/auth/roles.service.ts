@@ -15,6 +15,6 @@ export class RolesService {
   }
 
   private hasRole(...roles: UserRole[]): boolean {
-    return roles.some((role: UserRole) => this.user.roles.includes(role));
+    return roles.some((role) => this.user?.roles.includes(role));
   }
 }

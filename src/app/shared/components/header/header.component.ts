@@ -13,7 +13,7 @@ import { trackBy } from '../../utils/list.utils';
   imports: [RouterLink]
 })
 export class HeaderComponent implements OnInit {
-  routes: RouteConfig[];
+  routes!: RouteConfig[];
   trackByRouteKey = trackBy<RouteConfig>('key');
 
   ngOnInit() {

@@ -12,7 +12,7 @@ import { PostsService } from '../posts.service';
 export class PostDetailsResolver {
   private postsService = inject(PostsService);
 
-  resolve(route: ActivatedRouteSnapshot): Observable<Post> {
+  resolve(route: ActivatedRouteSnapshot): Observable<Post | undefined> {
     return this.postsService.getPostDetails(route.params.id);
   }
 }

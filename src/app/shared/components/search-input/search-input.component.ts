@@ -1,9 +1,9 @@
 import {
   Component,
-  OnInit,
+  EventEmitter,
   OnDestroy,
-  Output,
-  EventEmitter
+  OnInit,
+  Output
 } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -22,28 +22,23 @@ export class SearchInputComponent implements OnInit, OnDestroy {
   @Output() searchValueChange = new EventEmitter<string>();
 
   searchIcon = faSearch;
-  searchInput: FormControl<string>;
+  searchInput = new FormControl('', { nonNullable: true });
 
   private onDestroy$ = new Subject<boolean>();
   private DEBOUNCE_TIME = 400;
 
   ngOnInit() {
-    this.initializeSearchControl();
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
-  }
-
-  private initializeSearchControl(): void {
-    this.searchInput = new FormControl('', { nonNullable: true });
     this.searchInput.valueChanges
       .pipe(
         debounceTime(this.DEBOUNCE_TIME),
         distinctUntilChanged(),
         takeUntil(this.onDestroy$)
       )
-      .subscribe((v: string) => this.searchValueChange.emit(v));
+      .subscribe((value) => this.searchValueChange.emit(value));
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true);
+    this.onDestroy$.unsubscribe();
   }
 }

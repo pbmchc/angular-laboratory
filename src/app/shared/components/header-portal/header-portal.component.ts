@@ -20,13 +20,20 @@ export class HeaderPortalComponent implements AfterViewInit, OnDestroy {
   private applicationRef = inject(ApplicationRef);
   private injector = inject(Injector);
 
-  @ViewChild(CdkPortal) private headerPortal: CdkPortal;
-  private host: DomPortalOutlet;
+  @ViewChild(CdkPortal) private headerPortal!: CdkPortal;
+  private host!: DomPortalOutlet;
   private readonly OUTLET_ELEMENT_ID: string = 'ap-header-outlet';
 
   ngAfterViewInit() {
+    const outletElement = this.document.getElementById(this.OUTLET_ELEMENT_ID);
+    if (!outletElement) {
+      throw new Error(
+        `Couldn't find '${this.OUTLET_ELEMENT_ID}' outlet element`
+      );
+    }
+
     this.host = new DomPortalOutlet(
-      this.document.getElementById(this.OUTLET_ELEMENT_ID),
+      outletElement,
       this.applicationRef,
       this.injector
     );
