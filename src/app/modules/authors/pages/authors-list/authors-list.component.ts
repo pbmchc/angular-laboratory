@@ -21,7 +21,7 @@ import { AuthorListItemComponent } from '../../components/author-list-item/autho
 export class AuthorsListComponent implements OnInit {
   private route = inject(ActivatedRoute);
 
-  authors: Author[];
+  authors!: Author[];
   trackByAuthorId = trackBy<Author>('id');
 
   ngOnInit() {

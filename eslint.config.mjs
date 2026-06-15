@@ -50,6 +50,7 @@ export default defineConfig([
           format: ['UPPER_CASE']
         }
       ],
+      '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {

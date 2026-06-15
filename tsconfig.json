@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "esModuleInterop": true,
     "sourceMap": true,
@@ -11,13 +10,9 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "ES2022",
-      "DOM"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "types": ["@angular/localize", "jasmine", "node"],
+    "lib": ["ES2022", "DOM"],
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
@@ -25,7 +20,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "exclude": [
-    "cypress.config.ts"
-  ]
+  "exclude": ["cypress.config.ts"]
 }

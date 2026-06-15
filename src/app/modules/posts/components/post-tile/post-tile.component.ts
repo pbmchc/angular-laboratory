@@ -10,5 +10,5 @@ import { Post } from '../../../../shared/models/post/post.model';
   imports: [RouterLink]
 })
 export class PostTileComponent {
-  @Input() post: Post;
+  @Input({ required: true }) post!: Post;
 }

@@ -15,7 +15,7 @@ export class AuthorModifyComponent {
   private router = inject(Router);
   private authorsService = inject(AuthorsService);
 
-  onSaveAuthor(author: Partial<Author>) {
+  onSaveAuthor(author: Pick<Author, 'name'>) {
     this.authorsService
       .addAuthor(author)
       .subscribe((_: number) => this.router.navigate(['/authors']));

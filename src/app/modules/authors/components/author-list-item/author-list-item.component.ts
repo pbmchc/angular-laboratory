@@ -8,5 +8,5 @@ import { Author } from '../../../../shared/models/author/author.model';
   styleUrls: ['./author-list-item.component.scss']
 })
 export class AuthorListItemComponent {
-  @Input() author: Author;
+  @Input({ required: true }) author!: Author;
 }

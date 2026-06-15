@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import {
+  AbstractControl,
   AbstractControlOptions,
   NonNullableFormBuilder,
   Validators
@@ -31,15 +32,14 @@ export class AuthorFormBuilder {
   formatAuthorFormValue({
     firstName,
     lastName
-  }: Partial<AuthorFormValue>): Partial<Author> {
+  }: AuthorFormValue): Pick<Author, 'name'> {
     return { name: getFullName(firstName, lastName) };
   }
 
   private getAuthorFormOptions(): AbstractControlOptions {
     return {
-      asyncValidators: this.uniqueAuthorValidator.validate.bind(
-        this.uniqueAuthorValidator
-      ),
+      asyncValidators: (form: AbstractControl) =>
+        this.uniqueAuthorValidator.validate(form as AuthorForm),
       updateOn: 'blur'
     };
   }

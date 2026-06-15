@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withXhr } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -19,6 +19,6 @@ import { PostsRoutingModule } from './posts-routing.module';
     PostDetailsComponent,
     PostListComponent
   ],
-  providers: [provideHttpClient()]
+  providers: [provideHttpClient(withXhr())]
 })
 export class PostsModule {}
