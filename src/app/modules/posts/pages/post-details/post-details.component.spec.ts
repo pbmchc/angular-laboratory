@@ -1,5 +1,7 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
+
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { Post } from '../../../../shared/models/post/post.model';
 
@@ -15,11 +17,11 @@ describe('PostDetailsComponent', () => {
     description
   });
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterModule.forRoot([]), PostDetailsComponent]
-    }).compileComponents();
-  }));
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PostDetailsComponent);

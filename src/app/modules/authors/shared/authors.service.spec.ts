@@ -2,6 +2,8 @@ import { provideHttpClient, withXhr } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
+import { beforeEach, describe, expect, it } from 'vitest';
+
 import { AuthorsService } from './authors.service';
 
 describe('AuthorsService', () => {
@@ -17,7 +19,7 @@ describe('AuthorsService', () => {
   );
 
   it('should be created', () => {
-    const service: AuthorsService = TestBed.inject(AuthorsService);
+    const service = TestBed.inject(AuthorsService);
     expect(service).toBeTruthy();
   });
 });

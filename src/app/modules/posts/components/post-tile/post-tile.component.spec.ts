@@ -1,5 +1,7 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
+
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { Post } from '../../../../shared/models/post/post.model';
 
@@ -9,13 +11,13 @@ describe('PostTileComponent', () => {
   let component: PostTileComponent;
   let fixture: ComponentFixture<PostTileComponent>;
 
-  const mockPost = (id = 'id'): Post => ({ id } as Post);
+  const mockPost = (id = 'id'): Post => ({ id }) as Post;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterModule.forRoot([]), PostTileComponent]
-    }).compileComponents();
-  }));
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PostTileComponent);

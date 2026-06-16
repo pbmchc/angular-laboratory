@@ -1,6 +1,8 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
+
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { AuthorsListComponent } from './authors-list.component';
 
@@ -22,12 +24,12 @@ describe('AuthorsListComponent', () => {
     }
   };
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterModule.forRoot([]), AuthorsListComponent],
       schemas: [NO_ERRORS_SCHEMA]
-    }).compileComponents();
-  }));
+    });
+  });
 
   beforeEach(() => {
     outlet = createPortalOutlet();

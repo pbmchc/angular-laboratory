@@ -8,8 +8,8 @@
     "build": "ng build",
     "build:ci": "ng build --configuration production --base-href /angular-laboratory/",
     "build:localize": "ng build --localize",
-    "test": "ng test --watch=false --code-coverage",
-    "test:watch": "ng test --code-coverage",
+    "test": "ng test --watch=false --coverage",
+    "test:watch": "ng test --coverage",
     "lint": "ng lint",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
@@ -44,8 +44,8 @@
     "@angular/localize": "^22.0.1",
     "@cypress/schematic": "^4.3.0",
     "@eslint/js": "^9.39.1",
-    "@types/jasmine": "~5.1.15",
     "@types/node": "^24.13.2",
+    "@vitest/coverage-v8": "^4.1.9",
     "angular-eslint": "^22.0.0",
     "cypress": "^15.16.0",
     "eslint": "^9.39.4",
@@ -53,14 +53,9 @@
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import": "^2.32.0",
     "husky": "^9.1.7",
-    "istanbul-lib-instrument": "^6.0.3",
-    "jasmine-core": "~5.13.0",
-    "karma": "~6.4.4",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage-istanbul-reporter": "~3.0.3",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "^2.2.0",
+    "jsdom": "^29.1.1",
     "typescript": "~6.0.3",
-    "typescript-eslint": "^8.60.0"
+    "typescript-eslint": "^8.60.0",
+    "vitest": "^4.1.9"
   }
 }
