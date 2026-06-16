@@ -1,4 +1,6 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { Author } from '../../../../shared/models/author/author.model';
 
@@ -10,11 +12,11 @@ describe('AuthorListItemComponent', () => {
 
   const mockAuthor = (id = 'id', name = 'John Doe'): Author => ({ id, name });
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [AuthorListItemComponent]
-    }).compileComponents();
-  }));
+    });
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthorListItemComponent);
