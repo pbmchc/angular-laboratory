@@ -4,6 +4,7 @@
     "author_form.button.checking": "Checking...",
     "author_form.button.save": "Save",
     "author_form.error.author_exists": "Author already exists",
+    "author_form.error.unknown": "Unknown error",
     "authors_list.button.add_author": "Add author",
     "authors_list.heading": "Authors",
     "common.button.back": "Back",
