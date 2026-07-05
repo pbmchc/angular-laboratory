@@ -1,38 +1,26 @@
 import { Injectable, inject } from '@angular/core';
-import { AsyncValidator, ValidationErrors } from '@angular/forms';
 
-import { Observable, of } from 'rxjs';
-import { map, catchError, delay } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, delay } from 'rxjs/operators';
 
-import { AuthorFormValue } from '../../../../shared/models/author/author-form-value.model';
-import { AuthorForm } from '../../../../shared/models/author/author-form.model';
-import { Author } from '../../../../shared/models/author/author.model';
-import { getFullName } from '../../../../shared/utils/string.utils';
 import { AuthorsService } from '../authors.service';
 
 @Injectable()
-export class UniqueAuthorValidator implements AsyncValidator {
+export class UniqueAuthorValidator {
   private authorsService = inject(AuthorsService);
 
   private readonly SIMULATED_DELAY = 1000;
 
-  validate(form: AuthorForm): Observable<ValidationErrors | null> {
-    const { firstName, lastName } = form.value as AuthorFormValue;
-
-    return this.isExistingAuthor(getFullName(firstName, lastName)).pipe(
-      map((existingAuthor) =>
-        existingAuthor ? { existingAuthor: true } : null
-      ),
-      catchError(() => of(null))
+  validate(fullName: string): Observable<{ isUnique: boolean }> {
+    return this.isUniqueAuthor(fullName).pipe(
+      map((isUnique) => ({ isUnique }))
     );
   }
 
-  private isExistingAuthor(fullName: string): Observable<Author | undefined> {
+  private isUniqueAuthor(fullName: string): Observable<boolean> {
     return this.authorsService.getAuthors().pipe(
       delay(this.SIMULATED_DELAY),
-      map((authors: Author[]) =>
-        authors.find(({ name }: Author) => name === fullName)
-      )
+      map((authors) => !authors.some(({ name }) => name === fullName))
     );
   }
 }

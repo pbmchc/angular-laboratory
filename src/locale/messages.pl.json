@@ -4,6 +4,7 @@
     "author_form.button.checking": "Sprawdzanie...",
     "author_form.button.save": "Zapisz",
     "author_form.error.author_exists": "Autor już istnieje",
+    "author_form.error.unknown": "Nieznany błąd",
     "authors_list.button.add_author": "Dodaj autora",
     "authors_list.heading": "Autorzy",
     "common.button.back": "Powrót",
