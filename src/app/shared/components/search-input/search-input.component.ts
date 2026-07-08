@@ -1,44 +1,23 @@
-import {
-  Component,
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  Output
-} from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, debounced, effect, output, signal } from '@angular/core';
 
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'ap-search-input',
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss'],
-  imports: [FormsModule, ReactiveFormsModule, FaIconComponent]
+  imports: [FaIconComponent]
 })
-export class SearchInputComponent implements OnInit, OnDestroy {
-  @Output() searchValueChange = new EventEmitter<string>();
-
+export class SearchInputComponent {
   searchIcon = faSearch;
-  searchInput = new FormControl('', { nonNullable: true });
+  searchInputValue = signal('');
+  searchValue = debounced(this.searchInputValue, 400);
+  searchValueChange = output<string>();
 
-  private onDestroy$ = new Subject<boolean>();
-  private DEBOUNCE_TIME = 400;
-
-  ngOnInit() {
-    this.searchInput.valueChanges
-      .pipe(
-        debounceTime(this.DEBOUNCE_TIME),
-        distinctUntilChanged(),
-        takeUntil(this.onDestroy$)
-      )
-      .subscribe((value) => this.searchValueChange.emit(value));
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next(true);
-    this.onDestroy$.unsubscribe();
+  constructor() {
+    effect(() => {
+      this.searchValueChange.emit(this.searchValue.value());
+    });
   }
 }

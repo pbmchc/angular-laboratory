@@ -2,7 +2,7 @@
   <input
     i18n-placeholder="@@common.input.search.placeholder"
     placeholder="Search..."
-    [formControl]="searchInput"
+    (input)="searchInputValue.set($event.target.value)"
   />
   <fa-icon [icon]="searchIcon"></fa-icon>
 </div>

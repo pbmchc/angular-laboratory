@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  inject,
-  Output,
-  signal,
-  Signal
-} from '@angular/core';
+import { Component, inject, output, signal } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 import {
   debounce,
@@ -41,7 +34,7 @@ export class AuthorFormComponent {
           const { firstName, lastName } = value();
           return getFullName(firstName, lastName);
         },
-        factory: (fullName: Signal<string | undefined>) =>
+        factory: (fullName) =>
           rxResource({
             params: () => fullName(),
             stream: ({ params }) => this.uniqueAuthorValidator.validate(params)
@@ -69,5 +62,5 @@ export class AuthorFormComponent {
     }
   );
 
-  @Output() saveAuthor = new EventEmitter<Pick<Author, 'name'>>();
+  saveAuthor = output<Pick<Author, 'name'>>();
 }
