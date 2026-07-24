@@ -1,6 +1,7 @@
 {
   "name": "angular-laboratory",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "prepare": "husky",
@@ -16,7 +17,6 @@
     "e2e": "ng e2e",
     "extract-i18n": "ng extract-i18n --format json --output-path src/locale && node ./src/locale/postProcessMessages.js"
   },
-  "private": true,
   "dependencies": {
     "@angular/cdk": "^22.0.5",
     "@angular/common": "^22.0.7",
@@ -46,7 +46,7 @@
     "@vitest/coverage-v8": "^4.1.9",
     "angular-eslint": "^22.0.0",
     "cypress": "^15.18.0",
-    "eslint": "^9.39.4",
+    "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import": "^2.32.0",
