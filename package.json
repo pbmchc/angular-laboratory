@@ -18,7 +18,7 @@
     "extract-i18n": "ng extract-i18n --format json --output-path src/locale && node ./src/locale/postProcessMessages.js"
   },
   "dependencies": {
-    "@angular/cdk": "^22.0.6",
+    "@angular/cdk": "^22.0.7",
     "@angular/common": "^22.0.8",
     "@angular/compiler": "^22.0.8",
     "@angular/core": "^22.0.8",
@@ -33,10 +33,10 @@
     "zone.js": "^0.16.2"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "^0.2200.8",
-    "@angular-devkit/core": "^22.0.8",
-    "@angular/build": "^22.0.8",
-    "@angular/cli": "^22.0.8",
+    "@angular-devkit/architect": "^0.2200.9",
+    "@angular-devkit/core": "^22.0.9",
+    "@angular/build": "^22.0.9",
+    "@angular/cli": "^22.0.9",
     "@angular/compiler-cli": "^22.0.8",
     "@angular/language-service": "^22.0.8",
     "@angular/localize": "^22.0.8",
